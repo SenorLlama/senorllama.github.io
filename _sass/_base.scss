@@ -10,29 +10,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 > span {
-    border-bottom: 3px solid #f05f40;
+    border-bottom: 3px solid $brand-color-primary;
 }
 
 hr {
     max-width: 50px;
-    border-color: #f05f40;
+    border-color: $brand-color-primary;
     border-width: 3px;
 }
 
 a {
-    color: #f05f40;
+    color: $brand-color-primary;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
     &:hover,
     &:focus {
-        color: #eb3812;
+        color: $brand-color-secondary;
         text-decoration: none;
     }
 }
 
 .bg-primary {
-    background-color: #f05f40;
+    background-color: $brand-color-primary;
 }
 
 .description {
@@ -65,19 +65,19 @@ section {
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
-    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-family: $nav-font-family;
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
     .navbar-header .navbar-brand {
         text-transform: uppercase;
-        font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+        font-family: $nav-font-family;
         font-weight: 700;
-        color: #f05f40;
+        color: $brand-color-primary;
         &:hover,
         &:focus {
-            color: #eb3812;
+            color: $brand-color-secondary;
         }
     }
     .nav > li > a {
@@ -87,7 +87,7 @@ section {
         color: #222;
         &:focus,
         &:hover {
-            color: #f05f40;
+            color: $brand-color-primary;
         }
     }
 }
@@ -117,17 +117,17 @@ section {
         background-color: #fff;
         .navbar-header .navbar-brand {
             font-size: 14px;
-            color: #f05f40;
+            color: $brand-color-primary;
             &:hover,
             &:focus {
-                color: #eb3812;
+                color: $brand-color-secondary;
             }
         }
         .nav > li > a {
             color: #222;
             &:focus,
             &:hover {
-                color: #f05f40;
+                color: $brand-color-primary;
             }
         }
     }
@@ -172,7 +172,7 @@ header {
             padding: 0;
             a {
                 color: #fff;
-                &:hover { color: #eb3812; }
+                &:hover { color: $brand-color-secondary; }
             }
         }
     }
@@ -233,9 +233,9 @@ header {
 }
 
 .btn-primary {
-    border-color: #f05f40;
+    border-color: $brand-color-primary;
     color: #fff;
-    background-color: #f05f40;
+    background-color: $brand-color-primary;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -306,6 +306,9 @@ header {
             -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
             background-color: #ffffff;
+            img {
+                max-height: 80px;
+            }
             &:before {
                 position: absolute;
                 top: 26px;
@@ -340,7 +343,7 @@ header {
             top: 16px;
             left: 50%;
             margin-left: -25px;
-            background-color: #f05f40;
+            background-color: $brand-color-primary;
             z-index: 100;
             border-top-right-radius: 50%;
             border-top-left-radius: 50%;
@@ -432,6 +435,18 @@ header {
                 margin-left: 0;
                 top: 16px;
             }
+        }
+    }
+}
+
+.skills {
+    padding: 20px 0 20px;
+    position: relative;
+    .progress {
+        background-color: #cccccc;
+        height: 30px;
+        .progress-bar {
+            background-color: $brand-color-primary;
         }
     }
 }
