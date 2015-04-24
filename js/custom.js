@@ -33,4 +33,11 @@
             top: 100
         }
     });
+
+    $('a[rel=popover]').popover({
+        html: true,
+        trigger: 'hover',
+        placement: 'right',
+        content: function(){return '<img class="img-responsive" src="'+$(this).data('img') + '" />';}
+    });
 })(jQuery); // End of use strict
