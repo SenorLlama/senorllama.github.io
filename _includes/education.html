@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="">
+            <h2 class="title">{{ page.education_header }}</h2>
+        </div>
+        {% for school in page.education %}
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div class="m-2">
+                    <a href="{{ school.url }}">
+                        <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/education/{{ school.logo }}" alt=".co">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url('../assets/img/education/{{ school.logo }}'); opacity: 1;"></div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card-body">
+                    <h4 class="card-title">{{ school.school }}</h4>
+                    <h6 class="text-muted">{{ school.degree }}</h6>
+                    <h6 class="text-muted">{{ school.dates }}</h6>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

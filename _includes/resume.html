@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="">
+            <h2 class="title">{{ page.resume_header }}</h2>
+        </div>
+        <div class="">
+            {{ page.resume_summary }}
+        </div>
+        {% for job in page.resume %}
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <div class="m-2">
+                    <a href="{{ job.url }}">
+                        <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/resume/{{ job.logo }}" alt=".co">
+                    </a>
+                    <div class="colored-shadow" style="background-image: url('../assets/img/resume/{{ job.logo }}'); opacity: 1;"></div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card-body">
+                    <h4 class="card-title">{{ job.title }}</h4>
+                    <h6 class="text-muted">{{ job.company }}</h6>
+                    <h6 class="text-muted">{{ job.dates }} &middot; {{ job.location }}</h6>
+                    <ul class="card-description">
+                        {% for responsibility in job.responsibilities %}
+                        <li>{{ responsibility }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

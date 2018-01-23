@@ -68,7 +68,7 @@ materialKit = {
                     $('.navbar-color-on-scroll').addClass('navbar-transparent');
                 }
             }
-    }, 17),
+    }, 5),
 
     initSliders: function(){
         // Sliders for demo purpose

@@ -8,92 +8,33 @@ layout: default
     <div class="profile-content">
         <div class="container">
             <div class="row">
-                <div class="profile">
+                <div class="profile mx-auto">
                     <div class="avatar">
-                        <img src="../assets/img/{{ page.profile_img | default: 'profile.jpg' }}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                        <img src="../assets/img/{{ page.profile_img | default: 'profile.jpg' }}" alt="Circle Image" class="rounded img-fluid img-raised">
                     </div>
                     <div class="name">
                         <h3 class="title">{{ page.profile_name }}</h3>
                         <h6>{{ page.title }} <a href="https://twitter.com/{{ page.company_twitter }}" target="_blank">@{{ page.company_twitter }}</a></h6>
+                        {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" class="btn btn-just-icon btn-link btn-linkedin"><i class="fa fa-linkedin"></i></a>{% endif %}
+                        {% if site.github %}<a href="https://github.com/{{ site.github }}" target="_blank" class="btn btn-just-icon btn-link btn-github"><i class="fa fa-github"></i></a>{% endif %}
+                        {% if site.instagram %}<a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" class="btn btn-just-icon btn-link btn-instagram"><i class="fa fa-instagram"></i></a>{% endif %}
+                        {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>{% endif %}
                     </div>
                 </div>
             </div>
             <div class="description text-center">
-                <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                {{ page.about_me | markdownify }}
             </div>
 
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="profile-tabs">
-                        <div class="nav-align-center">
-                            <ul class="nav nav-pills" role="tablist">
-                                <li class="active">
-                                    <a href="#studio" role="tab" data-toggle="tab">
-                                        <i class="material-icons">camera</i>
-                                        Studio
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#work" role="tab" data-toggle="tab">
-                                        <i class="material-icons">palette</i>
-                                        Work
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#shows" role="tab" data-toggle="tab">
-                                        <i class="material-icons">favorite</i>
-                                        Favorite
-                                    </a>
-                                </li>
-                            </ul>
+            {% if page.resume %}
+            {% include resume.html %}
+            {% endif %}
 
-                            <div class="tab-content gallery">
-                                <div class="tab-pane active" id="studio">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/examples/chris1.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris0.jpg" class="img-rounded" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/examples/chris3.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris4.jpg" class="img-rounded" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane text-center" id="work">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/examples/chris5.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris7.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris9.jpg" class="img-rounded" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/examples/chris6.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris8.jpg" class="img-rounded" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane text-center" id="shows">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/examples/chris4.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris6.jpg" class="img-rounded" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/examples/chris7.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris5.jpg" class="img-rounded" />
-                                            <img src="../assets/img/examples/chris9.jpg" class="img-rounded" />
-                                        </div>
-                                    </div>
-                                </div>
+            {% if page.education %}
+            {% include education.html %}
+            {% endif %}
 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Profile Tabs -->
-                </div>
-            </div>
-
+            {{ content }}
         </div>
     </div>
 </div>
