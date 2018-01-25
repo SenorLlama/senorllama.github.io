@@ -15,12 +15,12 @@
     height: 50px;
     line-height: 30px;
     color: inherit;
+    background-color: transparent;
     padding: 10px 15px;
 
     &:hover,
     &:focus {
-      color: inherit;
-      background-color: transparent;
+      color: $gray-light;
     }
   }
 
@@ -89,19 +89,6 @@
         background-color: transparent;
         opacity: 0.9;
       }
-    }
-  }
-
-  // Darken the responsive nav toggle
-  .navbar-toggle {
-    border: 0;
-    &:hover,
-    &:focus {
-      background-color: transparent;
-    }
-    .icon-bar {
-      background-color: inherit;
-      border: 1px solid;
     }
   }
 

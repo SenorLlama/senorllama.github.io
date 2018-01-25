@@ -1,10 +1,8 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-4">
     <div class="col-md-10">
-        <div class="">
-            <h2 class="title">{{ page.education_header }}</h2>
-        </div>
+        <h2 class="text-center">{{ page.education_header }}</h2>
         {% for school in page.education %}
-        <div class="row align-items-center">
+        <div class="row align-items-center mb-2">
             <div class="col-md-3">
                 <div class="m-2">
                     <a href="{{ school.url }}">

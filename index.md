@@ -3,7 +3,7 @@ layout: profile
 body_class: profile-page
 background: machu_picchu.jpg
 profile_name: Marvin Guerra
-title: Senior Software Engineer
+profile_title: Senior Software Engineer
 about_me: |
     Hi, I'm Marvin. I am a developer, proud [Peruano](http://www.peru.travel/en-us/), eternal student, amateur runner, 
     and husband to [@BeingValentina](https://twitter.com/BeingValentina). I work on things I love and surround myself 
@@ -56,5 +56,37 @@ education:
       logo: exeter.png
 projects_header: Open Source Projects
 projects:
-    - name:
+    - name: Kinesis Logback Appender
+      background_img: kinesis.png
+      github: hyp3rventures/kinesis-logback-appender
+      badges: |
+        [![Maven Central](https://img.shields.io/maven-central/v/com.hyp3r/kinesis-logback-appender.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.hyp3r%22%20AND%20a%3A%22kinesis-logback-appender%22)&nbsp;&nbsp;
+        [![CircleCI](https://circleci.com/gh/hyp3rventures/kinesis-logback-appender.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/hyp3rventures/kinesis-logback-appender)&nbsp;&nbsp;
+        [![codecov](https://codecov.io/gh/hyp3rventures/kinesis-logback-appender/branch/master/graph/badge.svg)](https://codecov.io/gh/hyp3rventures/kinesis-logback-appender)
+      description: |
+        This Logback Appender for Amazon Kinesis enables Java applications to send their logs in a structured format 
+        to an Amazon Kinesis stream
+    - name: Elasticsearch DSL Builder
+      background_img: elastic.png
+      github: hyp3rventures/elasticsearch-dsl-builder
+      badges: |
+        [![Gem Version](https://badge.fury.io/rb/elasticsearch-dsl-builder.svg)](https://badge.fury.io/rb/elasticsearch-dsl-builder)&nbsp;&nbsp;
+        [![CircleCI](https://circleci.com/gh/hyp3rventures/elasticsearch-dsl-builder.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/hyp3rventures/elasticsearch-dsl-builder)&nbsp;&nbsp; 
+        [![codecov](https://codecov.io/gh/hyp3rventures/elasticsearch-dsl-builder/branch/master/graph/badge.svg)](https://codecov.io/gh/hyp3rventures/elasticsearch-dsl-builder)
+      description: |
+          Library utilizing builder pattern providing a Ruby API for the 
+          [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html). 
+          Compatible with Ruby 2.3.2 or higher and Elasticsearch 5.0 and higher
+    - name: Docker ProFtpd
+      background_img: docker.png
+      docker: senorllama/docker-proftpd
+      badges: |
+        [![Docker Pulls](https://img.shields.io/docker/pulls/senorllama/docker-proftpd.svg)](https://hub.docker.com/r/senorllama/docker-proftpd)
+      description: A Docker image to create a virtual FTP server that uses an external database for user credentials
+    - name: Docker ELK
+      background_img: docker.png
+      docker: senorllama/elk
+      badges: |
+        [![Docker Pulls](https://img.shields.io/docker/pulls/senorllama/elk.svg)](https://hub.docker.com/r/senorllama/elk)
+      description: Docker Image Packaging for ELK (Elasticsearch/Logstash/Kibana) stack
 ---

@@ -41,6 +41,24 @@
         }
     }
 
+    .card-img-overlay {
+        background: rgba(90,97,105,.8);
+        .card-title {
+            color: $white-color;
+        }
+        a {
+            color: $gray-lighter;
+            text-decoration: underline;
+            &:hover {
+                color: $white-color;
+                text-decoration: none;
+            }
+            &.btn {
+                text-decoration: none;
+            }
+        }
+    }
+
     .content{
         padding: 15px;
     }

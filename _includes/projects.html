@@ -1,0 +1,25 @@
+<div class="row justify-content-center mt-4">
+    <div class="col-md-10">
+        <h2 class="text-center">{{ page.projects_header }}</h2>
+        <div class="card-deck">
+            {% for project in page.projects %}
+            <div class="col-md-6 p-2">
+                <div class="card text-white mb-4 h-100">
+                    <img class="card-img" src="assets/img/projects/{{ project.background_img }}" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description | markdownify }}</p>
+                        <p class="card-text">{{ project.badges | markdownify }}</p>
+                        {% if project.github %}
+                        <a class="btn btn-primary"><i class="fa fa-github"></i>&nbsp;&nbsp;{{ project.github}}</a>
+                        {% endif %}
+                        {% if project.docker %}
+                        <a class="btn btn-primary"><img src="assets/img/projects/docker.svg" alt="docker logo" style="height: 15px;"></i>&nbsp;&nbsp;{{ project.docker}}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

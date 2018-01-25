@@ -9,12 +9,10 @@ layout: default
         <div class="container">
             <div class="row">
                 <div class="profile mx-auto">
-                    <div class="avatar">
-                        <img src="../assets/img/{{ page.profile_img | default: 'profile.jpg' }}" alt="Circle Image" class="rounded img-fluid img-raised">
-                    </div>
-                    <div class="name">
+                    <img src="../assets/img/{{ page.profile_img | default: 'profile.jpg' }}" alt="Circle Image" class="rounded img-fluid img-raised">
+                    <div>
                         <h3 class="title">{{ page.profile_name }}</h3>
-                        <h6>{{ page.title }} <a href="https://twitter.com/{{ page.company_twitter }}" target="_blank">@{{ page.company_twitter }}</a></h6>
+                        <h6>{{ page.profile_title }} <a href="https://twitter.com/{{ page.company_twitter }}" target="_blank">@{{ page.company_twitter }}</a></h6>
                         {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" class="btn btn-just-icon btn-link btn-linkedin"><i class="fa fa-linkedin"></i></a>{% endif %}
                         {% if site.github %}<a href="https://github.com/{{ site.github }}" target="_blank" class="btn btn-just-icon btn-link btn-github"><i class="fa fa-github"></i></a>{% endif %}
                         {% if site.instagram %}<a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" class="btn btn-just-icon btn-link btn-instagram"><i class="fa fa-instagram"></i></a>{% endif %}
@@ -22,8 +20,10 @@ layout: default
                     </div>
                 </div>
             </div>
-            <div class="description text-center">
-                {{ page.about_me | markdownify }}
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    {{ page.about_me | markdownify }}
+                </div>
             </div>
 
             {% if page.resume %}
@@ -32,6 +32,10 @@ layout: default
 
             {% if page.education %}
             {% include education.html %}
+            {% endif %}
+
+            {% if page.projects %}
+            {% include projects.html %}
             {% endif %}
 
             {{ content }}
