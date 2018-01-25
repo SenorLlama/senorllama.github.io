@@ -1,14 +1,16 @@
+<a class="anchor" id="resume"></a>
 <div class="row justify-content-center mt-5">
     <div class="col-md-10">
-        <h2 class="text-center">{{ page.resume_header }}</h2>
-        <div>
+        <h2 class="text-center title">{{ page.resume_header }}</h2>
+        <h4 class="text-center description">
             {{ page.resume_summary }}
-        </div>
+        </h4>
+
         {% for job in page.resume %}
         <div class="row align-items-center">
             <div class="col-md-3">
                 <div class="m-2">
-                    <a href="{{ job.url }}">
+                    <a href="{{ job.url }}" target="_blank">
                         <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/resume/{{ job.logo }}" alt=".co">
                     </a>
                     <div class="colored-shadow" style="background-image: url('../assets/img/resume/{{ job.logo }}'); opacity: 1;"></div>
@@ -28,5 +30,14 @@
             </div>
         </div>
         {% endfor %}
+
+        <div class="row justify-content-center text-center">
+            {% if site.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin }}" class="btn btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i>&nbsp;&nbsp;Visit Profile</a>
+            {% endif %}
+            {% if page.resume_dl %}
+            <a href="assets/docs/{{ page.resume_dl }}" class="btn btn-info" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Download Resume</a>
+            {% endif %}
+        </div>
     </div>
 </div>

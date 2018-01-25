@@ -15,6 +15,8 @@
   transition: box-shadow 0.2s $mdb-animation-curve-fast-out-linear-in,
   background-color 0.2s $mdb-animation-curve-default;
 
+  white-space: normal !important;
+
   &::-moz-focus-inner {
     border: 0;
   }
@@ -42,6 +44,9 @@
   &.btn-upgrade {
     @include btn-styles($brand-rose);
   }
+  &.btn-linkedin {
+    @include  btn-styles($linkedin-base)
+  }
   &.btn-white {
     color: #FFFFFF;
     background: transparent;
@@ -52,7 +57,7 @@
       color: $gray-light;
     }
   }
-  &.btn-linkedin{
+  &.btn-linkedin-icon{
     color: $linkedin-base;
     background: transparent;
     box-shadow: none;

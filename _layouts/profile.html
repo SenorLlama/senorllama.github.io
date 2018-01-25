@@ -13,7 +13,7 @@ layout: default
                     <div>
                         <h3 class="title">{{ page.profile_name }}</h3>
                         <h6>{{ page.profile_title }} <a href="https://twitter.com/{{ page.company_twitter }}" target="_blank">@{{ page.company_twitter }}</a></h6>
-                        {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" class="btn btn-just-icon btn-link btn-linkedin"><i class="fa fa-linkedin"></i></a>{% endif %}
+                        {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" class="btn btn-just-icon btn-link btn-linkedin-icon"><i class="fa fa-linkedin"></i></a>{% endif %}
                         {% if site.github %}<a href="https://github.com/{{ site.github }}" target="_blank" class="btn btn-just-icon btn-link btn-github"><i class="fa fa-github"></i></a>{% endif %}
                         {% if site.instagram %}<a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" class="btn btn-just-icon btn-link btn-instagram"><i class="fa fa-instagram"></i></a>{% endif %}
                         {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>{% endif %}
@@ -37,6 +37,8 @@ layout: default
             {% if page.projects %}
             {% include projects.html %}
             {% endif %}
+
+            {% include contact.html %}
 
             {{ content }}
         </div>

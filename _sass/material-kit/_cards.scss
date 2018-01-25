@@ -46,19 +46,16 @@
         .card-title {
             color: $white-color;
         }
+    }
+
+    .card-body {
         a {
-            color: $gray-lighter;
-            text-decoration: underline;
+            color: $white-color;
             &:hover {
-                color: $white-color;
-                text-decoration: none;
-            }
-            &.btn {
-                text-decoration: none;
+                color: $gray-lighter;
             }
         }
     }
-
     .content{
         padding: 15px;
     }
@@ -66,20 +63,6 @@
     .card-body {
         height: 30%;
         padding: 18px;
-    }
-
-    .card-footer {
-        height: 10%;
-        padding: 18px;
-        button, a {
-            margin: 0 !important;
-            position: relative;
-            bottom: 25px;
-            width: auto;
-            &:first-child {
-                left: -15px;
-            }
-        }
     }
 
     .header{

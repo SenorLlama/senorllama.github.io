@@ -11,10 +11,11 @@ about_me: |
     [@SenorLlama](https://twitter.com/SenorLlama) or drop me a [line](/#contact). 
 company_twitter: hyp3r
 resume_header: Recent Experience
+resume_dl: resume.pdf
 resume_summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 resume:
     - title: Senior Software Engineer
-      url: hyp3r.com
+      url: http://www.hyp3r.com
       company: HYP3R
       logo: hyp3r.png
       dates: Apr 2016 - Present
@@ -26,7 +27,7 @@ resume:
         - Designed and developed microservices responsible for different ETL processes using docker containers hosted on AWS container service
         - Designed and developed Big Data solutions to support statistical analysis and speed enhanced large queries using AWS Kinesis, AWS S3, AWS SQS, AWS Lambda, Redshift, and Elasticsearch
     - title: Lead Software Engineer
-      url: revinate.com
+      url: http://www.revinate.com
       company: Revinate
       logo: revinate.png
       dates: Feb 2013 - Apr 2016
@@ -40,17 +41,17 @@ resume:
 education_header: Education
 education:
     - school: Massachusetts Institute of Technology
-      url: mit.edu
+      url: http://www.mit.edu
       degree: M.Eng, Electrical Engineering
       dates: 2007 - 2008
       logo: mit.png
     - school: Massachusetts Institute of Technology
-      url: mit.edu
+      url: http://www.mit.edu
       degree: B.S., Electrical Engineering and Computer Science
       dates: 2003 - 2007
       logo: mit.png
     - school: Phillips Exeter Academy
-      url: exeter.edu
+      url: http://www.exeter.edu
       degree: High School
       dates: 1999 - 2003
       logo: exeter.png
@@ -58,7 +59,7 @@ projects_header: Open Source Projects
 projects:
     - name: Kinesis Logback Appender
       background_img: kinesis.png
-      github: hyp3rventures/kinesis-logback-appender
+      github: hyp3rventures/ kinesis-logback-appender
       badges: |
         [![Maven Central](https://img.shields.io/maven-central/v/com.hyp3r/kinesis-logback-appender.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.hyp3r%22%20AND%20a%3A%22kinesis-logback-appender%22)&nbsp;&nbsp;
         [![CircleCI](https://circleci.com/gh/hyp3rventures/kinesis-logback-appender.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/hyp3rventures/kinesis-logback-appender)&nbsp;&nbsp;
@@ -68,7 +69,7 @@ projects:
         to an Amazon Kinesis stream
     - name: Elasticsearch DSL Builder
       background_img: elastic.png
-      github: hyp3rventures/elasticsearch-dsl-builder
+      github: hyp3rventures/ elasticsearch-dsl-builder
       badges: |
         [![Gem Version](https://badge.fury.io/rb/elasticsearch-dsl-builder.svg)](https://badge.fury.io/rb/elasticsearch-dsl-builder)&nbsp;&nbsp;
         [![CircleCI](https://circleci.com/gh/hyp3rventures/elasticsearch-dsl-builder.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/hyp3rventures/elasticsearch-dsl-builder)&nbsp;&nbsp; 
@@ -79,14 +80,15 @@ projects:
           Compatible with Ruby 2.3.2 or higher and Elasticsearch 5.0 and higher
     - name: Docker ProFtpd
       background_img: docker.png
-      docker: senorllama/docker-proftpd
+      docker: senorllama/ docker-proftpd
       badges: |
         [![Docker Pulls](https://img.shields.io/docker/pulls/senorllama/docker-proftpd.svg)](https://hub.docker.com/r/senorllama/docker-proftpd)
       description: A Docker image to create a virtual FTP server that uses an external database for user credentials
     - name: Docker ELK
       background_img: docker.png
-      docker: senorllama/elk
+      docker: senorllama/ elk
       badges: |
         [![Docker Pulls](https://img.shields.io/docker/pulls/senorllama/elk.svg)](https://hub.docker.com/r/senorllama/elk)
       description: Docker Image Packaging for ELK (Elasticsearch/Logstash/Kibana) stack
+contact_header: Let's Get In Touch!
 ---

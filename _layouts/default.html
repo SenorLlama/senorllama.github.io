@@ -2,7 +2,7 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
     {% include head.html %}
 
-    <body class="{{ page.body_class | default: 'profile-page' }}">
+    <body data-spy="scroll" data-target="#navbar" data-offset="0" class="{{ page.body_class | default: 'profile-page' }}">
         {% include navbar.html %}
 
         <div class="wrapper">
