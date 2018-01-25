@@ -2,9 +2,11 @@
 <div class="row justify-content-center mt-5">
     <div class="col-md-10">
         <h2 class="text-center title">{{ page.resume_header }}</h2>
+        {% if page.resume_summary %}
         <h4 class="text-center description">
             {{ page.resume_summary }}
         </h4>
+        {% endif %}
 
         {% for job in page.resume %}
         <div class="row align-items-center">

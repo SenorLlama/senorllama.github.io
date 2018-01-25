@@ -12,7 +12,6 @@ about_me: |
 company_twitter: hyp3r
 resume_header: Recent Experience
 resume_dl: resume.pdf
-resume_summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 resume:
     - title: Senior Software Engineer
       url: http://www.hyp3r.com
