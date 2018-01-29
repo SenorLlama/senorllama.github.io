@@ -1,24 +1,26 @@
-<div class="row justify-content-center mt-4">
-    <div class="col-md-10">
-        <h2 class="text-center">{{ page.education_header }}</h2>
-        {% for school in page.education %}
-        <div class="row align-items-center mb-2">
-            <div class="col-md-3">
-                <div class="m-2">
-                    <a href="{{ school.url }}" target="_blank">
-                        <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/education/{{ school.logo }}" alt=".co">
-                    </a>
-                    <div class="colored-shadow" style="background-image: url('../assets/img/education/{{ school.logo }}'); opacity: 1;"></div>
+<div class="section">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <h2 class="text-center title">{{ page.education_header }}</h2>
+            {% for school in page.education %}
+            <div class="row align-items-center mb-2">
+                <div class="col-md-3">
+                    <div class="m-2">
+                        <a href="{{ school.url }}" target="_blank">
+                            <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/education/{{ school.logo }}" alt=".co">
+                        </a>
+                        <div class="colored-shadow" style="background-image: url('../assets/img/education/{{ school.logo }}'); opacity: 1;"></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ school.school }}</h4>
+                        <h6 class="text-muted">{{ school.degree }}</h6>
+                        <h6 class="text-muted">{{ school.dates }}</h6>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="card-body">
-                    <h4 class="card-title">{{ school.school }}</h4>
-                    <h6 class="text-muted">{{ school.degree }}</h6>
-                    <h6 class="text-muted">{{ school.dates }}</h6>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </div>

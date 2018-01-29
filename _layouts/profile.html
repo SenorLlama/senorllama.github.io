@@ -2,30 +2,31 @@
 layout: default
 ---
 
-<div class="header header-filter" style="background-image: url('../assets/img/{{ page.background | default: 'city.jpg' }}');"></div>
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/{{ page.background | default: 'city.jpg' }}');"></div>
 
 <div class="main main-raised">
     <div class="profile-content">
         <div class="container">
             <div class="row">
-                <div class="profile mx-auto">
-                    <img src="../assets/img/{{ page.profile_img | default: 'profile.jpg' }}" alt="Circle Image" class="rounded img-fluid img-raised">
-                    <div>
-                        <h3 class="title">{{ page.profile_name }}</h3>
-                        <h6>{{ page.profile_title }} <a href="https://twitter.com/{{ page.company_twitter }}" target="_blank">@{{ page.company_twitter }}</a></h6>
-                        {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" class="btn btn-just-icon btn-link btn-linkedin-icon"><i class="fa fa-linkedin"></i></a>{% endif %}
-                        {% if site.github %}<a href="https://github.com/{{ site.github }}" target="_blank" class="btn btn-just-icon btn-link btn-github"><i class="fa fa-github"></i></a>{% endif %}
-                        {% if site.instagram %}<a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" class="btn btn-just-icon btn-link btn-instagram"><i class="fa fa-instagram"></i></a>{% endif %}
-                        {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>{% endif %}
+                <div class="col-md-6 ml-auto mr-auto">
+                    <div class="profile">
+                        <div class="avatar">
+                            <img src="../assets/img/{{ page.profile_img | default: 'profile.jpg' }}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                        </div>
+                        <div class="name">
+                            <h3 class="title">{{ page.profile_name }}</h3>
+                            <h6>{{ page.profile_title }} <a href="https://twitter.com/{{ page.company_twitter }}" target="_blank">@{{ page.company_twitter }}</a></h6>
+                            {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" class="btn btn-just-icon btn-link btn-linkedin-icon"><i class="fa fa-linkedin"></i></a>{% endif %}
+                            {% if site.github %}<a href="https://github.com/{{ site.github }}" target="_blank" class="btn btn-just-icon btn-link btn-github-icon"><i class="fa fa-github"></i></a>{% endif %}
+                            {% if site.instagram %}<a href="https://www.instagram.com/{{ site.instagram }}" target="_blank" class="btn btn-just-icon btn-link btn-instagram-icon"><i class="fa fa-instagram"></i></a>{% endif %}
+                            {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" class="btn btn-just-icon btn-link btn-twitter-icon"><i class="fa fa-twitter"></i></a>{% endif %}
+                        </div>
                     </div>
+
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <h4 class="text-center description">
-                        {{ page.about_me | markdownify }}
-                    </h4>
-                </div>
+            <div class="description text-center">
+                {{ page.about_me | markdownify }}
             </div>
 
             {% if page.resume %}

@@ -1,34 +1,37 @@
-<nav id="navbar" class="navbar navbar-expand-lg bg-faded fixed-top navbar-transparent navbar-color-on-scroll">
+<nav id="sectionsNav" class="navbar navbar-dark bg-primary navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
     <div class="container">
-        <a class="navbar-brand" href="#">{{ site.title }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbarNavDropdown" class="navbar-collapse collapse">
-            <ul class="navbar-nav mr-auto">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
                 {% if site.linkedin %}
                 <li class="nav-item">
-                    <a class="nav-link btn btn-white btn-just-icon" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a class="nav-link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
                 </li>
                 {% endif %}
                 {% if site.github %}
                 <li class="nav-item">
-                    <a class="nav-link btn btn-white btn-just-icon" href="https://github.com/{{ site.github }}" target="_blank"><i class="fa fa-github"></i></a>
+                    <a class="nav-link" href="https://github.com/{{ site.github }}" target="_blank"><i class="fa fa-github"></i></a>
                 </li>
                 {% endif %}
                 {% if site.instagram %}
                 <li class="nav-item">
-                    <a class="nav-link btn btn-white btn-just-icon" href="https://www.instagram.com/{{ site.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a class="nav-link" href="https://www.instagram.com/{{ site.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
                 </li>
                 {% endif %}
                 {% if site.twitter %}
                 <li class="nav-item">
-                    <a class="nav-link btn btn-white btn-just-icon" href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a class="nav-link" href="https://twitter.com/{{ site.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
                 </li>
                 {% endif %}
-
             </ul>
-            <ul class="navbar-nav">
+            <ul class="nav navbar-nav ml-auto">
                 {% if page.resume %}
                 <li class="nav-item">
                     <a class="nav-link" href="#resume">Experience</a>

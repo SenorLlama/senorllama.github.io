@@ -1,45 +1,46 @@
-<a class="anchor" id="resume"></a>
-<div class="row justify-content-center mt-5">
-    <div class="col-md-10">
-        <h2 class="text-center title">{{ page.resume_header }}</h2>
-        {% if page.resume_summary %}
-        <h4 class="text-center description">
-            {{ page.resume_summary }}
-        </h4>
-        {% endif %}
+<div id="resume" class="section">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <h2 class="text-center title">{{ page.resume_header }}</h2>
+            {% if page.resume_summary %}
+            <h4 class="text-center description">
+                {{ page.resume_summary }}
+            </h4>
+            {% endif %}
 
-        {% for job in page.resume %}
-        <div class="row align-items-center">
-            <div class="col-md-3">
-                <div class="m-2">
-                    <a href="{{ job.url }}" target="_blank">
-                        <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/resume/{{ job.logo }}" alt=".co">
-                    </a>
-                    <div class="colored-shadow" style="background-image: url('../assets/img/resume/{{ job.logo }}'); opacity: 1;"></div>
+            {% for job in page.resume %}
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="m-2">
+                        <a href="{{ job.url }}" target="_blank">
+                            <img class="img-fluid" style="width: 100%; max-width: 200px;" src="assets/img/resume/{{ job.logo }}" alt=".co">
+                        </a>
+                        <div class="colored-shadow" style="background-image: url('../assets/img/resume/{{ job.logo }}'); opacity: 1;"></div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ job.title }}</h4>
+                        <h6 class="text-muted">{{ job.company }}</h6>
+                        <h6 class="text-muted">{{ job.dates }} &middot; {{ job.location }}</h6>
+                        <ul class="card-description">
+                            {% for responsibility in job.responsibilities %}
+                            <li>{{ responsibility }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="card-body">
-                    <h4 class="card-title">{{ job.title }}</h4>
-                    <h6 class="text-muted">{{ job.company }}</h6>
-                    <h6 class="text-muted">{{ job.dates }} &middot; {{ job.location }}</h6>
-                    <ul class="card-description">
-                        {% for responsibility in job.responsibilities %}
-                        <li>{{ responsibility }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
 
-        <div class="row justify-content-center text-center">
-            {% if site.linkedin %}
-            <a href="https://www.linkedin.com/in/{{ site.linkedin }}" class="btn btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i>&nbsp;&nbsp;Visit Profile</a>
-            {% endif %}
-            {% if page.resume_dl %}
-            <a href="assets/docs/{{ page.resume_dl }}" class="btn btn-info" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Download Resume</a>
-            {% endif %}
+            <div class="row justify-content-center text-center">
+                {% if site.linkedin %}
+                <a href="https://www.linkedin.com/in/{{ site.linkedin }}" class="btn btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i>&nbsp;&nbsp;Visit Profile</a>
+                {% endif %}
+                {% if page.resume_dl %}
+                <a href="assets/docs/{{ page.resume_dl }}" class="btn btn-info" target="_blank"><i class="fa fa-download"></i>&nbsp;&nbsp;Download Resume</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

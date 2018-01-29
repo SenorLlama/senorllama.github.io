@@ -1,0 +1,333 @@
+.index-page{
+    .section-components h6.description{
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+
+    .page-header{
+        height: 90vh;
+        overflow: hidden;
+    }
+    .brand{
+        color: $white-color;
+        text-align: center;
+
+        h1{
+            font-size: 4.2rem;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+        }
+        h3{
+            font-size: 1.313rem;
+            max-width: 500px;
+            margin: 10px auto 0;
+        }
+    }
+    .page-header:after{
+      background: rgba(132, 13, 121, .88);
+      background: linear-gradient(45deg, rgba(132, 13, 121, .88), rgba(208, 44, 180, .31));
+      background: -webkit-linear-gradient(135deg, rgba(132, 13, 121, .88), rgba(208, 44, 180, .31));
+    }
+
+    .purple-filter:after{
+      background: rgba(101, 47, 142, 0.64);
+      background: linear-gradient(45deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+      background: -moz-linear-gradient(135deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+      background: -webkit-linear-gradient(135deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
+    }
+
+    h4.description{
+        font-size: 1.5em;
+    }
+}
+.section{
+  padding: 70px 0;
+}
+.profile-page{
+    .page-header{
+        height: 380px;
+        background-position: center;
+        background-size: cover;
+    }
+    .profile{
+        text-align: center;
+
+        img{
+            max-width: 160px;
+            width: 100%;
+            margin: 0 auto;
+            @include transform-translate-y(-50%);
+        }
+        .name{
+            margin-top: -80px;
+        }
+    }
+    .follow{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .description{
+        margin: $margin-base auto 0;
+        max-width: 600px;
+    }
+    .profile-tabs{
+        margin-top: $margin-base * 4;
+    }
+    .gallery{
+        margin-top: $margin-base * 3;
+        padding-bottom: 50px;
+
+        img{
+            width: 100%;
+            margin-bottom: $margin-base * 2;
+        }
+    }
+    .follow{
+        .btn-fab{
+            margin-top: -28px;
+        }
+    }
+    .card-background{
+        .content{
+            padding: 30% 0;
+            min-width: 160px;
+        }
+    }
+    .work{
+        padding: 40px 0px;
+        .collections{
+            margin-top: 20px;
+        }
+
+        .stats{
+            ul > li{
+                padding: 5px 0px;
+                font-size: 1em;
+                b{
+                    font-size: 1.2em;
+                }
+
+            }
+        }
+    }
+
+    .connections{
+        padding: 40px 0px;
+        .card-profile{
+            text-align: left;
+        }
+    }
+
+    .tab-content{
+        .collections{
+            .card .card-body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .badge{
+                    display: inline-table;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.card-signup {
+  .card-header {
+    .social-line {
+      .btn {
+        color: $white-color;
+      }
+    }
+  }
+  .text-divider {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+}
+
+.signup-page {
+    .page-header {
+        min-height: 100vh;
+        height: auto;
+        display: inherit;
+
+        .container{
+            padding-top: 20vh;
+        }
+    }
+
+    .card-signup {
+        border-radius: $border-radius-base * 2;
+        @include shadow-16dp();
+        margin-bottom: 100px;
+        padding: 40px 0px;
+
+    }
+    .info-horizontal {
+        padding: 0px 0px 20px;
+    }
+
+    .social {
+        .btn {
+            margin: 5px;
+        }
+        h4 {
+            margin-top: 20px;
+        }
+    }
+}
+
+.footer {
+    padding: 0.9375rem 0;
+    text-align: center;
+    display: flex;
+    ul {
+        margin-bottom: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            display: inline-block;
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-weight: 500;
+                font-size: 12px;
+                text-transform: uppercase;
+                position: relative;
+                display: block;
+                padding: 0.9375rem;
+                border-radius: 3px;
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+    .copyright {
+        padding: 15px 0;
+        a {
+            color: inherit;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.header-filter {
+    position: relative;
+}
+
+.header-filter:before,
+.header-filter:after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+}
+
+.header-filter::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-filter .container {
+    z-index: 2;
+    position: relative;
+}
+
+.header-filter[filter-color="purple"]:after,
+.header-filter[filter-color="primary"]:after {
+    background: rgba(225, 190, 231, 0.56);
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(60deg, rgba(225, 190, 231, 0.56), rgba(186, 104, 200, 0.95));
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(60deg, rgba(225, 190, 231, 0.56), rgba(186, 104, 200, 0.95));
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(60deg, rgba(225, 190, 231, 0.56), rgba(186, 104, 200, 0.95));
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(60deg, rgba(225, 190, 231, 0.56), rgba(186, 104, 200, 0.95));
+    /* Standard syntax */
+}
+
+.header-filter[filter-color="blue"]:after,
+.header-filter[filter-color="info"]:after {
+    background: rgba(178, 235, 242, 0.56);
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(60deg, rgba(178, 235, 242, 0.56), rgba(77, 208, 225, 0.95));
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(60deg, rgba(178, 235, 242, 0.56), rgba(77, 208, 225, 0.95));
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(60deg, rgba(178, 235, 242, 0.56), rgba(77, 208, 225, 0.95));
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(60deg, rgba(178, 235, 242, 0.56), rgba(77, 208, 225, 0.95));
+    /* Standard syntax */
+}
+
+.header-filter[filter-color="green"]:after,
+.header-filter[filter-color="success"]:after {
+    background: rgba(165, 214, 167, 0.56);
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(60deg, rgba(165, 214, 167, 0.56), rgba(102, 187, 106, 0.95));
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(60deg, rgba(165, 214, 167, 0.56), rgba(102, 187, 106, 0.95));
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(60deg, rgba(165, 214, 167, 0.56), rgba(102, 187, 106, 0.95));
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(60deg, rgba(165, 214, 167, 0.56), rgba(102, 187, 106, 0.95));
+    /* Standard syntax */
+}
+
+.header-filter[filter-color="orange"]:after,
+.header-filter[filter-color="warning"]:after {
+    background: rgba(255, 224, 178, 0.56);
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(60deg, rgba(255, 224, 178, 0.56), rgba(255, 183, 77, 0.95));
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(60deg, rgba(255, 224, 178, 0.56), rgba(255, 183, 77, 0.95));
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(60deg, rgba(255, 224, 178, 0.56), rgba(255, 183, 77, 0.95));
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(60deg, rgba(255, 224, 178, 0.56), rgba(255, 183, 77, 0.95));
+    /* Standard syntax */
+}
+
+.header-filter[filter-color="red"]:after,
+.header-filter[filter-color="danger"]:after {
+    background: rgba(239, 154, 154, 0.56);
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(60deg, rgba(239, 154, 154, 0.56), rgba(239, 83, 80, 0.95));
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(60deg, rgba(239, 154, 154, 0.56), rgba(239, 83, 80, 0.95));
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(60deg, rgba(239, 154, 154, 0.56), rgba(239, 83, 80, 0.95));
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(60deg, rgba(239, 154, 154, 0.56), rgba(239, 83, 80, 0.95));
+    /* Standard syntax */
+}
+
+.header-filter[filter-color="rose"]:after {
+    background: rgba(248, 187, 208, 0.56);
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(60deg, rgba(248, 187, 208, 0.56), rgba(240, 98, 146, 0.95));
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(60deg, rgba(248, 187, 208, 0.56), rgba(240, 98, 146, 0.95));
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(60deg, rgba(248, 187, 208, 0.56), rgba(240, 98, 146, 0.95));
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(60deg, rgba(248, 187, 208, 0.56), rgba(240, 98, 146, 0.95));
+    /* Standard syntax */
+}
+
+.clear-filter:before {
+    display: none;
+}
