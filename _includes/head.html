@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}?v={{ site.css_version }}">
 
     {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
