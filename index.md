@@ -9,7 +9,7 @@ about_me: |
     and husband to [@BeingValentina](https://twitter.com/BeingValentina). I work on things I love and surround myself 
     with great people. Fan of whiskey and stouts, and enjoy playing strategy board games. Follow me at 
     [@SenorLlama](https://twitter.com/SenorLlama) or drop me a [line](/#contact). 
-company_twitter: hyp3r
+company_twitter: gofundme
 resume_header: Recent Experience
 resume_dl: resume.pdf
 resume:
