@@ -14,10 +14,19 @@ resume_header: Recent Experience
 resume_dl: resume.pdf
 resume:
     - title: Senior Software Engineer
+      url: http://www.gofundme.com
+      company: GoFundMe
+      logo: gofundme.jpg
+      dates: March 2018 - Present
+      location: Los Angeles, CA
+      responsibilities:
+        - RESTful web services development
+        - Payments procesing service development
+    - title: Senior Software Engineer
       url: http://www.hyp3r.com
       company: HYP3R
       logo: hyp3r.png
-      dates: Apr 2016 - Present
+      dates: Apr 2016 - March 2018
       location: San Francisco, CA
       responsibilities:
         - RESTful web services development
