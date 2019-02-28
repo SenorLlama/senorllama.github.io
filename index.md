@@ -13,7 +13,7 @@ company_twitter: gofundme
 resume_header: Recent Experience
 resume_dl: resume.pdf
 resume:
-    - title: Senior Software Engineer
+    - title: Staff Software Engineer
       url: http://www.gofundme.com
       company: GoFundMe
       logo: gofundme.jpg
