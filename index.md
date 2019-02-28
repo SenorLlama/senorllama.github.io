@@ -3,7 +3,7 @@ layout: profile
 body_class: profile-page
 background: machu_picchu.jpg
 profile_name: Marvin Guerra
-profile_title: Senior Software Engineer
+profile_title: Staff Software Engineer
 about_me: |
     Hi, I'm Marvin. I am a developer, proud [Peruano](http://www.peru.travel/en-us/), eternal student, amateur runner, 
     and husband to [@BeingValentina](https://twitter.com/BeingValentina). I work on things I love and surround myself 
