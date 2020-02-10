@@ -13,15 +13,27 @@ company_twitter: gofundme
 resume_header: Recent Experience
 resume_dl: resume.pdf
 resume:
+    - title: Commerce Engineering Manager
+      url: https://www.quibi.com
+      company: Quibi
+      logo: quibi.jpeg
+      dates: April 2019 - Present
+      location: Los Angeles, CA
+      responsibilities:
+        - Manage integrations to App Store Subscriptions
+        - Manage integrations to external partners
     - title: Staff Software Engineer
       url: http://www.gofundme.com
       company: GoFundMe
       logo: gofundme.jpg
-      dates: March 2018 - Present
+      dates: March 2018 - March 2019
       location: Los Angeles, CA
       responsibilities:
-        - RESTful web services development
-        - Payments procesing service development
+        - Architected revamped payments processing service to deliver unified experience across GoFundMe products
+        - Architected and delivered revamped Charity Search service powering main site and enterprise API searches for available charities
+        - Delivered auto update pipeline to maintain charity details up to date with current provider as well as merging metadata for optimized search
+        - Delivered revamped infrastructure cookbooks (terraform + ansible) and simplified continuous delivery for payments services
+        - Developed Integration with PayPal's payment services
     - title: Senior Software Engineer
       url: http://www.hyp3r.com
       company: HYP3R
