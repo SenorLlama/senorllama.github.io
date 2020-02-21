@@ -3,13 +3,13 @@ layout: profile
 body_class: profile-page
 background: machu_picchu.jpg
 profile_name: Marvin Guerra
-profile_title: Staff Software Engineer
+profile_title: Commerce Engineering Manager
 about_me: |
     Hi, I'm Marvin. I am a developer, proud [Peruano](http://www.peru.travel/en-us/), eternal student, amateur runner, 
     and husband to [@BeingValentina](https://twitter.com/BeingValentina). I work on things I love and surround myself 
     with great people. Fan of whiskey and stouts, and enjoy playing strategy board games. Follow me at 
     [@SenorLlama](https://twitter.com/SenorLlama) or drop me a [line](/#contact). 
-company_twitter: gofundme
+company_twitter: quibi
 resume_header: Recent Experience
 resume_dl: resume.pdf
 resume:
