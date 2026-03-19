@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/img/llama-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="assets/img/llama-icon.png" alt="Marvin Guerra" width="36" height="36">
+        <img src="assets/img/llama-icon.png" alt="Marvin Guerra" width="28" height="28">
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -35,10 +35,11 @@
   <header class="hero" id="hero">
     <div class="container hero-layout">
       <div class="hero-text">
+        <span class="hero-tag">Engineering Leadership</span>
         <h1>I'm <span class="hero-accent">Marvin</span></h1>
-        <p class="hero-bio">Currently leading the Editor AI team at <strong>Figma</strong>, where I work at the intersection of creativity, intelligence, and product design. My career has taken me through leadership roles across Growth, Payments, and Infrastructure at companies like Webflow, Fast, Quibi, and GoFundMe.</p>
+        <p class="hero-bio">Currently serving as Head of Engineering at <strong>Pulley</strong>, where I focus on team development, product strategy, and engineering leadership to deliver scalable equity management solutions. My career has taken me through leadership roles across AI, Growth, Payments, and Infrastructure at companies like Figma, Webflow, Fast, Quibi, and GoFundMe.</p>
         <p class="hero-bio">Along the way, I've advised early-stage startups, championed Diversity, Equity, and Inclusion, and built software systems spanning event pipelines, experimentation platforms, payments, and data warehousing.</p>
-        <p class="hero-bio">I'm a proud immigrant from Peru <span class="emoji">&#x1F1F5;&#x1F1EA;</span> and a first-generation MIT <span class="emoji">&#x1F9AB;</span> graduate, experiences that shape how I lead, build, and connect. Outside of work, I'm powered by good coffee <span class="emoji">&#x2615;</span> and driven by the rhythms of salsa, reggaeton, and hip-hop <span class="emoji">&#x1F3A7;</span>.</p>
+        <p class="hero-bio">I'm a proud immigrant from Peru &#x1F1F5;&#x1F1EA; and a first-generation MIT &#x1F9AB; graduate, experiences that shape how I lead, build, and connect. Outside of work, I'm powered by good coffee &#x2615; and driven by the rhythms of salsa, reggaeton, and hip-hop &#x1F3A7;.</p>
         <p class="hero-bio">I'm here not just for work, but for community, creativity, and meaningful collaboration. Let's build something great together.</p>
         <div class="hero-social">
           <a href="https://www.linkedin.com/in/marvinguerra/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -59,15 +60,15 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="assets/img/profile.jpg" alt="Marvin Guerra" width="420" height="420">
+        <img src="assets/img/profile.jpg" alt="Marvin Guerra">
       </div>
     </div>
   </header>
 
   <!-- Expertise -->
-  <section class="section" id="expertise">
+  <section class="section-expertise" id="expertise">
     <div class="container">
-      <h2 class="section-label">Expertise</h2>
+      <h2 class="section-heading">Expertise</h2>
       <p class="section-intro">I have 10+ years of experience as a Software Engineer and 5+ years of Engineering Management experience.</p>
 
       <div class="expertise-grid">
@@ -83,7 +84,7 @@
           <div class="expertise-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3>Team Growth & Development</h3>
+          <h3>Team Growth &amp; Development</h3>
           <p>I've built and scaled high-performing engineering teams across startups and high-growth environments. I've grown teams from 1 to 6 (Figma Editor AI) and from 4 to 16 (Webflow Growth), fostering inclusive, collaborative cultures that prioritize impact and learning. My leadership emphasizes mentorship, autonomy, and structured goal-setting, enabling teams to move quickly without sacrificing quality.</p>
         </div>
 
@@ -106,90 +107,121 @@
     </div>
   </section>
 
-  <!-- Work -->
-  <section class="section section-alt" id="work">
+  <!-- Work / The Journey -->
+  <section class="section-work" id="work">
     <div class="container">
-      <h2 class="section-label">Work</h2>
+      <h2 class="section-heading section-heading--center">The Journey</h2>
+      <p class="section-sub">A decade of engineering leadership</p>
 
-      <div class="work-grid">
-
-        <a href="https://www.figma.com" target="_blank" rel="noopener" class="work-card">
-          <div class="work-img">
-            <img src="assets/img/work/figma.png" alt="Figma" loading="lazy">
-          </div>
-          <div class="work-info">
-            <h3>Figma</h3>
-            <p class="work-role">Engineering Manager, Editor AI</p>
-            <p class="work-date">Jun 2023 &mdash; Present</p>
-          </div>
+      <!-- Pulley -->
+      <div class="work-card">
+        <div class="work-card-img">
+          <img src="assets/img/work/pulley.webp" alt="Pulley" loading="lazy">
+        </div>
+        <a href="https://pulley.com" target="_blank" rel="noopener" class="work-card-panel">
+          <p class="work-card-date">2025 &mdash; Present</p>
+          <h3>Pulley</h3>
+          <p class="work-card-role">Head of Engineering</p>
+          <p class="work-card-desc">Leading engineering teams to deliver scalable equity management solutions for high-growth startups.</p>
         </a>
+      </div>
 
-        <a href="https://webflow.com" target="_blank" rel="noopener" class="work-card">
-          <div class="work-img">
-            <img src="assets/img/work/webflow.jpeg" alt="Webflow" loading="lazy">
-          </div>
-          <div class="work-info">
-            <h3>Webflow</h3>
-            <p class="work-role">Senior Engineering Manager, Growth</p>
-            <p class="work-date">Sep 2021 &mdash; May 2023</p>
-            <p class="work-desc">Drove Activation & Acquisition strategies, advancing our mission to empower everyone in web creation. Focused on building the world's most powerful visual development platform, enhancing the user journey so users discover and experience the full value of Webflow seamlessly.</p>
-          </div>
+      <!-- Figma -->
+      <div class="work-card work-card--reverse">
+        <div class="work-card-img">
+          <img src="assets/img/work/figma.png" alt="Figma" loading="lazy">
+        </div>
+        <a href="https://www.figma.com" target="_blank" rel="noopener" class="work-card-panel">
+          <p class="work-card-date">2023 &mdash; 2025</p>
+          <h3>Figma</h3>
+          <p class="work-card-role">Engineering Manager, Editor AI</p>
+          <p class="work-card-desc">Led the Editor AI team, spearheading AI-powered productivity tools including Image Tools, Text Tools, and Content Fill.</p>
         </a>
+      </div>
 
-        <a href="https://www.fast.co" target="_blank" rel="noopener" class="work-card">
-          <div class="work-img">
-            <img src="assets/img/work/fast.png" alt="Fast" loading="lazy">
-          </div>
-          <div class="work-info">
-            <h3>Fast</h3>
-            <p class="work-role">Engineering Manager, Events & Communications</p>
-            <p class="work-date">Nov 2020 &mdash; Aug 2021</p>
-            <p class="work-desc">Drove technological advancements for scalable data processing. Optimized the user events pipeline, established a centralized communications service, and developed internal tools for seamless partner interactions and communication updates.</p>
-          </div>
+      <!-- Webflow -->
+      <div class="work-card">
+        <div class="work-card-img">
+          <img src="assets/img/work/webflow.jpeg" alt="Webflow" loading="lazy">
+        </div>
+        <a href="https://webflow.com" target="_blank" rel="noopener" class="work-card-panel">
+          <p class="work-card-date">2021 &mdash; 2023</p>
+          <h3>Webflow</h3>
+          <p class="work-card-role">Senior Engineering Manager, Growth</p>
+          <p class="work-card-desc">Drove Activation &amp; Acquisition strategies, expanding the Growth Pillar from 3 to 12 engineers.</p>
         </a>
+      </div>
 
-        <a href="https://en.wikipedia.org/wiki/Quibi" target="_blank" rel="noopener" class="work-card">
-          <div class="work-img">
-            <img src="assets/img/work/quibi.jpeg" alt="Quibi" loading="lazy">
-          </div>
-          <div class="work-info">
-            <h3>Quibi</h3>
-            <p class="work-role">Engineering Manager, Commerce</p>
-            <p class="work-date">Mar 2019 &mdash; Dec 2020</p>
-            <p class="work-desc">Designed subscription processing services, established the Commerce Engineering team, and managed the T-Mobile engineering relationship. Led delivery of a Customer Support portal handling ~300 calls/day and implemented an Experimentation Framework to validate subscription model growth.</p>
-          </div>
+      <!-- Quibi -->
+      <div class="work-card work-card--reverse">
+        <div class="work-card-img">
+          <img src="assets/img/work/quibi.jpeg" alt="Quibi" loading="lazy">
+        </div>
+        <a href="https://en.wikipedia.org/wiki/Quibi" target="_blank" rel="noopener" class="work-card-panel">
+          <p class="work-card-date">2019 &mdash; 2020</p>
+          <h3>Quibi</h3>
+          <p class="work-card-role">Engineering Manager, Commerce</p>
+          <p class="work-card-desc">Designed subscription processing architecture and established the Commerce Engineering team.</p>
         </a>
+      </div>
 
-        <a href="https://www.gofundme.com" target="_blank" rel="noopener" class="work-card">
-          <div class="work-img">
-            <img src="assets/img/work/gofundme.png" alt="GoFundMe" loading="lazy">
-          </div>
-          <div class="work-info">
-            <h3>GoFundMe</h3>
-            <p class="work-role">Staff Software Engineer, Billing</p>
-            <p class="work-date">Feb 2018 &mdash; Mar 2019</p>
-            <p class="work-desc">Revamped payments processing for a unified user experience, reduced redundancy by half, and facilitated provider transitions. Delivered the Charity Search service, decreasing search time by 20x. Onboarded and mentored two engineers and streamlined continuous delivery with revamped infrastructure.</p>
-          </div>
-        </a>
-
+      <!-- Previous -->
+      <div class="work-previous">
+        <p class="work-previous-label">Previous Organizations</p>
+        <div class="work-previous-list">
+          <a href="https://www.fast.co" target="_blank" rel="noopener" class="work-prev-item">
+            <span class="work-prev-name">Fast</span>
+            <span class="work-prev-detail">Engineering Manager &middot; 2020&ndash;2021</span>
+          </a>
+          <a href="https://www.gofundme.com" target="_blank" rel="noopener" class="work-prev-item">
+            <span class="work-prev-name">GoFundMe</span>
+            <span class="work-prev-detail">Staff Software Engineer &middot; 2018&ndash;2019</span>
+          </a>
+          <a class="work-prev-item">
+            <span class="work-prev-name">HYP3R</span>
+            <span class="work-prev-detail">Staff Software Engineer &middot; 2016&ndash;2018</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="section" id="contact">
-    <div class="container contact-container">
-      <h2 class="section-label">Got a cool opportunity or have a question?</h2>
-      <p class="contact-subtitle">Get in touch!</p>
+  <section class="section-contact" id="contact">
+    <div class="container contact-layout">
+      <div class="contact-cta">
+        <h2 class="contact-heading">Let's build the future together.</h2>
+        <p class="contact-subtitle">Currently available for strategic advisory and speaking engagements.</p>
+      </div>
       <form class="contact-form" action="https://formspree.io/marvin@marvinguerra.com" method="POST">
         <input type="hidden" name="_subject" value="Hello from your website!">
         <input type="hidden" name="_next" value="https://senorllama.github.io">
         <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="_replyto" placeholder="Email" required>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="_replyto" required>
+          </div>
         </div>
-        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
+        <div class="form-row">
+          <div class="form-group">
+            <label>I'm Looking For</label>
+            <select name="looking_for">
+              <option value="advisory">Advisory / Consulting</option>
+              <option value="speaking">Speaking Engagement</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Details</label>
+          <textarea name="message" rows="4" placeholder="Tell me about your project" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
       </form>
     </div>
   </section>
@@ -218,13 +250,11 @@
   </footer>
 
   <script>
-    // Navbar scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -234,11 +264,10 @@
       });
     });
 
-    // Scroll-triggered reveal
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.expertise-card, .work-card, .contact-form').forEach(el => io.observe(el));
+    document.querySelectorAll('.expertise-card, .work-card, .work-prev-item, .contact-cta, .contact-form').forEach(el => io.observe(el));
   </script>
 
 </body>
