@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found</title>
+  <link rel="icon" type="image/png" href="/assets/img/llama-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #af101a;
+      --secondary: #885200;
+      --surface: #f9f9f6;
+      --surface-container-low: #f4f3ef;
+      --on-surface: #1a1c1b;
+      --outline: #74777f;
+      --serif: 'Noto Serif', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--sans);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .error-code {
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--primary);
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+    .error-line {
+      width: 56px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+      margin: 28px auto;
+      animation: lineExpand 0.6s ease 0.6s both;
+    }
+    .error-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s both;
+    }
+    .error-message {
+      font-size: 1rem;
+      color: var(--outline);
+      max-width: 400px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1s both;
+    }
+    .error-link {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 0.75rem;
+      background: var(--surface);
+      transition: background 0.2s, transform 0.2s;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.2s both;
+    }
+    .error-link:hover {
+      background: #ffdad6;
+      transform: translateY(-2px);
+    }
+    .error-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0s both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes lineExpand {
+      from { width: 0; opacity: 0; }
+      to { width: 56px; opacity: 1; }
+    }
+    @media (max-width: 640px) {
+      .error-code { font-size: 5rem; }
+      .error-title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <img src="/assets/img/llama-avatar.png" alt="EngLlama" class="error-avatar">
+  <h1 class="error-code">404</h1>
+  <div class="error-line"></div>
+  <p class="error-title">Page not found</p>
+  <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+  <a href="/" class="error-link">Back to Home</a>
+</body>
+</html>
