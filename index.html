@@ -31,18 +31,14 @@
     </div>
   </nav>
 
-  <!-- Intro Splash -->
-  <section class="intro" id="intro">
+  <!-- Intro Splash Overlay -->
+  <div class="intro" id="intro">
     <div class="intro-content">
       <p class="intro-tag">Engineering Leadership</p>
       <h1 class="intro-name">Marvin <em>Guerra</em></h1>
       <div class="intro-line"></div>
     </div>
-    <div class="intro-scroll">
-      <span>Scroll</span>
-      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v16m0 0l-5-5m5 5l5-5"/></svg>
-    </div>
-  </section>
+  </div>
 
   <!-- Hero -->
   <header class="hero" id="hero">
@@ -255,7 +251,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-col">
-        <img src="assets/img/llama-avatar.png" alt="EngLlama" class="footer-avatar" width="48" height="48">
+        <img src="assets/img/llama-avatar.png" alt="EngLlama" class="footer-avatar" width="72" height="72">
         <p class="footer-copy">&copy; 2026 Marvin Guerra</p>
       </div>
       <div class="footer-col">
@@ -275,6 +271,23 @@
   </footer>
 
   <script>
+    // Intro splash overlay — auto-dismiss after animations finish
+    (function() {
+      const intro = document.getElementById('intro');
+      if (intro) {
+        // Dismiss after 2.6s (enough for all staggered animations to play)
+        setTimeout(() => {
+          intro.classList.add('dismiss');
+        }, 2600);
+        // Fully hide after slide-up transition ends
+        intro.addEventListener('transitionend', () => {
+          if (intro.classList.contains('dismiss')) {
+            intro.classList.add('hidden');
+          }
+        });
+      }
+    })();
+
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 20);
