@@ -62,6 +62,22 @@ a { color: inherit; }
 
 img { display: block; }
 
+/* Keyboard focus rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.contact a:focus-visible,
+.contact button:focus-visible,
+.contact input:focus-visible,
+.contact textarea:focus-visible {
+  outline-color: var(--gold-light);
+}
+
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -374,7 +390,9 @@ img { display: block; }
   display: flex;
   flex-direction: column;
   gap: 14px;
+  transition: background 0.18s;
 }
+.expertise-cell:hover { background: var(--card); }
 .expertise-cell-top {
   display: flex;
   align-items: center;
@@ -420,8 +438,8 @@ img { display: block; }
   text-decoration: none;
   color: inherit;
   display: grid;
-  grid-template-columns: 88px 1fr auto;
-  gap: 28px;
+  grid-template-columns: 30% 1fr auto;
+  gap: 36px;
   align-items: center;
   padding: 30px 8px;
   border-top: 1px solid var(--hairline-12);
@@ -429,15 +447,17 @@ img { display: block; }
 }
 .job:hover { background: var(--surface); }
 .job-logo {
-  width: 88px;
-  height: 88px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 6px;
   overflow: hidden;
   background: var(--jade-cream);
   border: 1px solid var(--hairline);
   background-size: cover;
   background-position: center;
+  transition: transform 0.3s ease;
 }
+.job:hover .job-logo { transform: scale(1.03); }
 .job-headline {
   display: flex;
   align-items: baseline;
@@ -770,10 +790,9 @@ img { display: block; }
 
   .hero { padding-top: 56px; }
   .job {
-    grid-template-columns: 64px 1fr;
-    gap: 18px;
+    grid-template-columns: 28% 1fr;
+    gap: 20px;
   }
-  .job-logo { width: 64px; height: 64px; }
   .job-arrow { display: none; }
 }
 
