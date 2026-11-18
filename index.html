@@ -15,15 +15,41 @@
   <meta property="og:description" content="Head of Engineering at Pulley. First-generation MIT graduate, proud immigrant from Peru. Available for advisory and speaking engagements.">
   <meta property="og:url" content="https://marvinguerra.com/">
   <meta property="og:image" content="https://marvinguerra.com/assets/img/og-preview.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="2400">
+  <meta property="og:image:height" content="1260">
+  <meta property="og:image:alt" content="Marvin Guerra, Head of Engineering at Pulley">
   <meta property="og:site_name" content="Marvin Guerra">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Marvin Guerra — Engineering Leader">
   <meta name="twitter:description" content="Head of Engineering at Pulley. First-generation MIT graduate, proud immigrant from Peru.">
   <meta name="twitter:image" content="https://marvinguerra.com/assets/img/og-preview.jpg">
+  <meta name="twitter:image:alt" content="Marvin Guerra, Head of Engineering at Pulley">
+  <meta name="twitter:site" content="@SenorLlama">
+  <meta name="twitter:creator" content="@SenorLlama">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marvin Guerra",
+    "url": "https://marvinguerra.com/",
+    "image": "https://marvinguerra.com/assets/img/profile.jpg",
+    "jobTitle": "Head of Engineering",
+    "worksFor": { "@type": "Organization", "name": "Pulley", "url": "https://pulley.com" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Massachusetts Institute of Technology", "url": "https://www.mit.edu" },
+    "sameAs": [
+      "https://www.linkedin.com/in/marvinguerra/",
+      "https://github.com/SenorLlama",
+      "https://twitter.com/SenorLlama",
+      "https://www.instagram.com/senorllama/",
+      "https://goodreads.com/senorllama"
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="assets/img/llama-icon.png">
   <link rel="apple-touch-icon" href="assets/img/llama-icon.png">
@@ -38,7 +64,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#top" class="nav-logo">
-        <img class="nav-monogram" src="assets/img/llama-icon.png" alt="Marvin Guerra" width="38" height="38">
+        <img class="nav-monogram" src="assets/img/llama-icon.png" alt="" width="38" height="38">
         <span class="nav-name">Marvin Guerra</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -92,7 +118,10 @@
         <div class="hero-photo-glow"></div>
         <div class="hero-photo-corner"></div>
         <div class="hero-photo-frame">
-          <img src="assets/img/profile.jpg" alt="Marvin Guerra">
+          <picture>
+            <source srcset="assets/img/profile.webp" type="image/webp">
+            <img src="assets/img/profile.jpg" alt="Marvin Guerra, Head of Engineering at Pulley" width="960" height="1440" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </div>
@@ -258,7 +287,7 @@
         <h2 class="contact-title">Let's build the <em>future</em> together.</h2>
         <p class="contact-text">Currently available for strategic advisory and speaking engagements. Tell me what you're working on.</p>
         <div class="contact-id">
-          <img src="assets/img/llama-avatar.png" alt="">
+          <img src="assets/img/llama-avatar.png" alt="" width="52" height="52" loading="lazy">
           <div class="contact-id-caption">First-gen MIT 🦫 · Proud immigrant from Peru 🇵🇪<br>Powered by good coffee ☕</div>
         </div>
       </div>
