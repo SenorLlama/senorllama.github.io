@@ -88,6 +88,7 @@ textarea:focus-visible {
 /* Offset anchored sections so headings clear the sticky nav */
 .expertise,
 .journey,
+.reading,
 .contact { scroll-margin-top: 88px; }
 
 /* ---------- Keyframes ---------- */
@@ -545,6 +546,156 @@ textarea:focus-visible {
   color: var(--muted);
 }
 
+/* ---------- Reading (Goodreads shelf) ---------- */
+/* Selectors are scoped under .reading-shelf so they win over the styles
+   Goodreads ships with the widget, whatever colors are set there. */
+.reading {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--pad) 96px;
+}
+.reading .section-head { margin-bottom: 40px; }
+.reading-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+}
+.reading-intro p {
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--ink-60);
+  margin: 0 0 16px;
+  max-width: 400px;
+  text-wrap: pretty;
+}
+.reading-intro .reading-note {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+.reading-link {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--clay);
+  border: 1px solid rgba(181,70,47,0.35);
+  padding: 9px 18px;
+  border-radius: 100px;
+  transition: background 0.15s, color 0.15s;
+}
+.reading-link:hover { background: var(--clay); color: var(--bg); }
+
+/* Scrollable shelf: fixed max height, more books without a long page */
+.reading-shelf {
+  position: relative;
+  max-height: 560px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  background: var(--surface);
+  border: 1px solid var(--hairline-12);
+  border-radius: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(181,70,47,0.45) transparent;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent);
+          mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent);
+}
+.reading-shelf:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+.reading-shelf::-webkit-scrollbar { width: 8px; }
+.reading-shelf::-webkit-scrollbar-thumb { background: rgba(181,70,47,0.4); border-radius: 8px; }
+
+.reading-shelf .gr_custom_container_1795114824 {
+  background: transparent !important;
+  color: var(--ink) !important;
+  border: 0 !important;
+  border-radius: 0;
+  padding: 6px 24px 40px;
+  font-family: var(--sans);
+}
+/* The section already has a heading; hide the widget's own title and footer text */
+.reading-shelf .gr_custom_header_1795114824,
+.reading-shelf noscript { display: none; }
+.reading-shelf center {
+  margin-top: 18px;
+  opacity: 0.6;
+}
+.reading-shelf center img { display: inline-block; }
+
+.reading-shelf .gr_custom_each_container_1795114824 {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  grid-template-areas:
+    "cover title  rating"
+    "cover author author"
+    "cover tags   tags";
+  grid-template-rows: auto auto 1fr;
+  column-gap: 18px;
+  row-gap: 4px;
+  width: auto;
+  margin: 0;
+  padding: 18px 0;
+  overflow: visible;
+  border-bottom: 1px solid var(--hairline);
+}
+.reading-shelf .gr_custom_each_container_1795114824:last-of-type { border-bottom: 0; }
+.reading-shelf .gr_custom_book_container_1795114824 {
+  grid-area: cover;
+  float: none;
+  width: 64px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  align-self: start;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--surface-2);
+  box-shadow: 0 1px 2px rgba(28,24,21,0.12), 0 4px 10px rgba(28,24,21,0.08);
+}
+.reading-shelf .gr_custom_book_container_1795114824 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reading-shelf .gr_custom_title_1795114824 {
+  grid-area: title;
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.reading-shelf .gr_custom_title_1795114824 a { text-decoration: none; }
+.reading-shelf .gr_custom_title_1795114824 a:hover { color: var(--clay); }
+.reading-shelf .gr_custom_author_1795114824 {
+  grid-area: author;
+  font-size: 14px;
+  color: var(--muted);
+}
+.reading-shelf .gr_custom_author_1795114824 a { text-decoration: none; color: var(--ink-80); }
+.reading-shelf .gr_custom_author_1795114824 a:hover { color: var(--clay); }
+.reading-shelf .gr_custom_tags_1795114824 {
+  grid-area: tags;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--clay);
+  margin-top: 4px;
+}
+.reading-shelf .gr_custom_rating_1795114824 {
+  grid-area: rating;
+  float: none;
+  padding-top: 4px;
+  white-space: nowrap;
+}
+.reading-shelf .staticStars { display: inline-flex; gap: 1px; }
+.reading-shelf .staticStars img {
+  display: inline-block;
+  width: 13px !important;
+  height: 13px !important;
+}
+
 /* ---------- Contact (jade panel) ---------- */
 .contact {
   background: var(--jade);
@@ -762,7 +913,11 @@ textarea:focus-visible {
 @media (max-width: 880px) {
   .hero-layout,
   .expertise-grid,
+  .reading-layout,
   .contact-layout { grid-template-columns: 1fr; }
+
+  .reading-layout { gap: 28px; }
+  .reading-shelf { max-height: 480px; }
 
   .hero-name { font-size: 16vw; }
 
@@ -805,6 +960,20 @@ textarea:focus-visible {
   :root { --pad: 22px; }
   .contact-title { font-size: 40px; }
   .section-title { font-size: 36px; }
+  .reading-shelf .gr_custom_container_1795114824 { padding: 4px 16px 36px; }
+  .reading-shelf .gr_custom_each_container_1795114824 {
+    grid-template-columns: 52px 1fr;
+    grid-template-areas:
+      "cover title"
+      "cover author"
+      "cover rating"
+      "cover tags";
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 14px;
+  }
+  .reading-shelf .gr_custom_book_container_1795114824 { width: 52px; }
+  .reading-shelf .gr_custom_title_1795114824 { font-size: 17px; }
+  .reading-shelf .gr_custom_rating_1795114824 { padding-top: 2px; }
 }
 
 /* ---------- Reduced motion ---------- */
