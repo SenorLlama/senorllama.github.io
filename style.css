@@ -26,6 +26,18 @@
 
   --hairline: rgba(28,24,21,0.10);
   --hairline-12: rgba(28,24,21,0.12);
+  --hairline-14: rgba(28,24,21,0.14);
+  --shadow-a: rgba(28,24,21,0.12);
+  --shadow-b: rgba(28,24,21,0.08);
+  --shade-fade: rgba(28,24,21,0.10);
+  --shade-none: rgba(28,24,21,0);
+  --surface-none: rgba(248,243,234,0);
+  --nav-bg: rgba(244,239,230,0.82);
+  --menu-bg: rgba(244,239,230,0.97);
+  --photo-bg: #e9e1d4;
+  --btn-hover: #2a241f;
+  --motif-opacity: 0.42;
+  color-scheme: light;
 
   /* Fonts */
   --serif: 'Newsreader', Georgia, serif;
@@ -40,6 +52,76 @@
   --tocapu-ink: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%231c1815'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%231c1815'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%231c1815'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%231c1815'%20stroke-width='1.3'/%3E%3C/svg%3E");
   --tocapu-light: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%23f4efe6'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%23f4efe6'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%23f4efe6'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%23f4efe6'%20stroke-width='1.3'/%3E%3C/svg%3E");
   --tocapu-cream: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%23ece4d6'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%23ece4d6'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%23ece4d6'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%23ece4d6'%20stroke-width='1.3'/%3E%3C/svg%3E");
+}
+
+/* ---------- Dark mode ----------
+   Follows the system setting; the nav toggle sets data-theme on <html>
+   to override it either way. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15110f;
+    --surface: #1c1815;
+    --surface-2: #241e1a;
+    --card: #211c18;
+    --ink: #efe7da;
+    --ink-80: #d8cebf;
+    --ink-60: #cdc3b4;
+    --muted: #a99f91;
+    --muted-2: #bcb2a3;
+    --clay: #e27852;
+    --clay-hover: #ec8d6a;
+    --ochre: #d49a45;
+    --gold-light: #e2ab62;
+    --jade: #102824;
+    --hairline: rgba(239,231,218,0.10);
+    --hairline-12: rgba(239,231,218,0.13);
+    --hairline-14: rgba(239,231,218,0.16);
+    --shadow-a: rgba(0,0,0,0.35);
+    --shadow-b: rgba(0,0,0,0.25);
+    --shade-fade: rgba(0,0,0,0.45);
+    --shade-none: rgba(0,0,0,0);
+    --surface-none: rgba(28,24,21,0);
+    --nav-bg: rgba(21,17,15,0.82);
+    --menu-bg: rgba(21,17,15,0.97);
+    --photo-bg: #2a231e;
+    --btn-hover: #ffffff;
+    --motif-opacity: 0.3;
+    --tocapu-ink: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%23efe7da'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%23efe7da'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%23efe7da'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%23efe7da'%20stroke-width='1.3'/%3E%3C/svg%3E");
+    --tocapu-light: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%2315110f'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%2315110f'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%2315110f'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%2315110f'%20stroke-width='1.3'/%3E%3C/svg%3E");
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15110f;
+  --surface: #1c1815;
+  --surface-2: #241e1a;
+  --card: #211c18;
+  --ink: #efe7da;
+  --ink-80: #d8cebf;
+  --ink-60: #cdc3b4;
+  --muted: #a99f91;
+  --muted-2: #bcb2a3;
+  --clay: #e27852;
+  --clay-hover: #ec8d6a;
+  --ochre: #d49a45;
+  --gold-light: #e2ab62;
+  --jade: #102824;
+  --hairline: rgba(239,231,218,0.10);
+  --hairline-12: rgba(239,231,218,0.13);
+  --hairline-14: rgba(239,231,218,0.16);
+  --shadow-a: rgba(0,0,0,0.35);
+  --shadow-b: rgba(0,0,0,0.25);
+  --shade-fade: rgba(0,0,0,0.45);
+  --shade-none: rgba(0,0,0,0);
+  --surface-none: rgba(28,24,21,0);
+  --nav-bg: rgba(21,17,15,0.82);
+  --menu-bg: rgba(21,17,15,0.97);
+  --photo-bg: #2a231e;
+  --btn-hover: #ffffff;
+  --motif-opacity: 0.3;
+  --tocapu-ink: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%23efe7da'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%23efe7da'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%23efe7da'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%23efe7da'%20stroke-width='1.3'/%3E%3C/svg%3E");
+  --tocapu-light: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3E%3Crect%20x='2'%20y='2'%20width='8'%20height='8'%20fill='%2315110f'/%3E%3Crect%20x='14'%20y='14'%20width='8'%20height='8'%20fill='%2315110f'/%3E%3Crect%20x='14'%20y='2'%20width='8'%20height='8'%20fill='none'%20stroke='%2315110f'%20stroke-width='1.3'/%3E%3Crect%20x='2'%20y='14'%20width='8'%20height='8'%20fill='none'%20stroke='%2315110f'%20stroke-width='1.3'/%3E%3C/svg%3E");
+  color-scheme: dark;
 }
 
 /* ---------- Base ---------- */
@@ -116,7 +198,7 @@ textarea:focus-visible {
   z-index: 50;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  background: rgba(244,239,230,0.82);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--hairline);
 }
 .nav-inner {
@@ -171,7 +253,7 @@ textarea:focus-visible {
   letter-spacing: 0.02em;
   transition: background 0.15s;
 }
-.nav-btn:hover { background: #2a241f; }
+.nav-btn:hover { background: var(--btn-hover); }
 
 .nav-toggle {
   display: none;
@@ -193,6 +275,32 @@ textarea:focus-visible {
   margin: 0 auto;
   transition: 0.2s;
 }
+
+/* Light / dark switch */
+.nav-logo { order: 1; margin-right: auto; }
+.nav-links { order: 2; }
+.theme-toggle { order: 3; }
+.nav-toggle { order: 4; }
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 22px;
+  padding: 0;
+  border: 1px solid var(--hairline-14);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-80);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.theme-toggle:hover { color: var(--clay); border-color: var(--clay); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle[aria-pressed="true"] .icon-sun { display: block; }
+.theme-toggle[aria-pressed="true"] .icon-moon { display: none; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -307,8 +415,8 @@ textarea:focus-visible {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid rgba(28,24,21,0.14);
-  background: #e9e1d4;
+  border: 1px solid var(--hairline-14);
+  background: var(--photo-bg);
   aspect-ratio: 4 / 5;
   z-index: 1;
 }
@@ -340,12 +448,13 @@ textarea:focus-visible {
   background-repeat: repeat;
   background-position: center;
   background-size: 30px 30px;
-  opacity: 0.42;
+  opacity: var(--motif-opacity);
   animation: bandScroll 8s linear infinite;
 }
 .divider-band--left  { --tile: -30px; }
 .divider-band--right { --tile: 30px; }
 .divider-medallion {
+  color: var(--clay);
   width: 30px;
   height: 29px;
   flex: none;
@@ -785,10 +894,10 @@ textarea:focus-visible {
   /* Scroll shadows: a soft fade shows at the top/bottom edge only while there
      is more to scroll that way; the border stays crisp on all four sides. */
   background:
-    linear-gradient(var(--surface) 30%, rgba(248,243,234,0)) center top / 100% 40px no-repeat local,
-    linear-gradient(rgba(248,243,234,0), var(--surface) 70%) center bottom / 100% 40px no-repeat local,
-    radial-gradient(farthest-side at 50% 0, rgba(28,24,21,0.10), rgba(28,24,21,0)) center top / 100% 14px no-repeat scroll,
-    radial-gradient(farthest-side at 50% 100%, rgba(28,24,21,0.10), rgba(28,24,21,0)) center bottom / 100% 14px no-repeat scroll,
+    linear-gradient(var(--surface) 30%, var(--surface-none)) center top / 100% 40px no-repeat local,
+    linear-gradient(var(--surface-none), var(--surface) 70%) center bottom / 100% 40px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, var(--shade-fade), var(--shade-none)) center top / 100% 14px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, var(--shade-fade), var(--shade-none)) center bottom / 100% 14px no-repeat scroll,
     var(--surface);
 }
 .reading-shelf:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
@@ -840,7 +949,7 @@ textarea:focus-visible {
   overflow: hidden;
   border-radius: 3px;
   background: var(--surface-2);
-  box-shadow: 0 1px 2px rgba(28,24,21,0.12), 0 4px 10px rgba(28,24,21,0.08);
+  box-shadow: 0 1px 2px var(--shadow-a), 0 4px 10px var(--shadow-b);
 }
 .reading-shelf .gr_custom_book_container_1795114824 img {
   width: 100%;
@@ -1135,7 +1244,7 @@ textarea:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
-    background: rgba(244,239,230,0.97);
+    background: var(--menu-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--hairline);
@@ -1151,6 +1260,7 @@ textarea:focus-visible {
     pointer-events: auto;
   }
   .nav-toggle { display: flex; }
+  .theme-toggle { margin: 0 6px 0 0; }
 
   .hero { padding-top: 56px; }
 

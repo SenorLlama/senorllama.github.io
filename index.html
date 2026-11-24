@@ -101,7 +101,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15110f" media="(prefers-color-scheme: dark)">
+  <script>
+    // Apply a saved light/dark choice before first paint; otherwise follow the system.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -112,6 +122,10 @@
         <img class="nav-monogram" src="assets/img/llama-icon-96.png" alt="" width="38" height="38">
         <span class="nav-name">Marvin Guerra</span>
       </a>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
@@ -181,7 +195,7 @@
   <div class="divider" aria-hidden="true">
     <span class="divider-band divider-band--left"></span>
     <svg class="divider-medallion" viewBox="-28 -28 56 54">
-      <path d="M0 0 a4 4 0 0 1 8 0 a8 8 0 0 1 -16 0 a12 12 0 0 1 24 0 a16 16 0 0 1 -32 0 a20 20 0 0 1 40 0 a24 24 0 0 1 -48 0" fill="none" stroke="#b5462f" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M0 0 a4 4 0 0 1 8 0 a8 8 0 0 1 -16 0 a12 12 0 0 1 24 0 a16 16 0 0 1 -32 0 a20 20 0 0 1 40 0 a24 24 0 0 1 -48 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
     </svg>
     <span class="divider-band divider-band--right"></span>
   </div>
@@ -551,6 +565,23 @@
   </section>
 
   <script>
+    // Light / dark toggle. A saved choice wins; otherwise the system setting does.
+    (function () {
+      const root = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      const sys = window.matchMedia('(prefers-color-scheme: dark)');
+      const current = () => root.getAttribute('data-theme') || (sys.matches ? 'dark' : 'light');
+      const sync = () => btn.setAttribute('aria-pressed', current() === 'dark' ? 'true' : 'false');
+      btn.addEventListener('click', () => {
+        const next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        sync();
+      });
+      sys.addEventListener('change', sync);
+      sync();
+    })();
+
     // Sticky-nav active link + scrolled state
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
