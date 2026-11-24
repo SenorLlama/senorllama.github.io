@@ -207,7 +207,7 @@
           <span class="expertise-line"></span>
         </div>
         <h3>Team Growth &amp; Development</h3>
-        <p>I've built and scaled high-performing engineering teams across startups and high-growth environments. I've grown teams from 1 to 6 (Figma Editor AI) and from 3 to 12 (Webflow Growth), fostering inclusive, collaborative cultures that prioritize impact and learning. My leadership emphasizes mentorship, autonomy, and structured goal-setting, enabling teams to move quickly without sacrificing quality.</p>
+        <p>I've built and scaled high-performing engineering teams across startups and high-growth environments. I've grown teams from 1 to 4 engineers (Figma Editor AI) and from 3 to 12 (Webflow Growth), fostering inclusive, collaborative cultures that prioritize impact and learning. My leadership emphasizes mentorship, autonomy, and structured goal-setting, enabling teams to move quickly without sacrificing quality.</p>
       </div>
       <div class="expertise-cell reveal">
         <div class="expertise-cell-top">
@@ -498,8 +498,13 @@
       </div>
 
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/marvin@marvinguerra.com" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xqpqgnol" method="POST">
           <input type="hidden" name="_subject" value="Hello from your website!">
+          <!-- Spam trap: hidden from people, bots fill it in and Formspree drops the message -->
+          <div class="field-trap" aria-hidden="true">
+            <label for="cf-gotcha">Leave this empty</label>
+            <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
           <input type="hidden" name="looking_for" id="looking-for-input" value="Advisory / Consulting">
           <div class="field">
             <label for="cf-name">Full Name</label>
@@ -523,6 +528,7 @@
             <textarea id="cf-details" name="message" rows="3" required></textarea>
           </div>
           <button type="submit" class="btn-submit">Send Message →</button>
+          <p class="form-error" id="form-error" role="alert" hidden>Sorry, your message didn't go through. Please try again in a moment, or reach me on <a href="https://www.linkedin.com/in/marvinguerra/" target="_blank" rel="noopener">LinkedIn</a>.</p>
         </form>
       </div>
     </div>
@@ -628,31 +634,42 @@
       });
     });
 
-    // Contact form — AJAX submit to Formspree, then show thank-you card
+    // Contact form: AJAX submit to Formspree. Thank-you card only on success,
+    // otherwise keep what they typed and show an error they can act on.
     const form = document.getElementById('contact-form');
+    const formError = document.getElementById('form-error');
+    const submitBtn = form.querySelector('.btn-submit');
     form.addEventListener('submit', async e => {
       e.preventDefault();
       const name = (document.getElementById('cf-name').value || '').trim();
       const firstName = name ? ', ' + name.split(/\s+/)[0] : '';
+      formError.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
 
-      const showThanks = () => {
-        const card = document.createElement('div');
-        card.className = 'thank-you';
-        card.innerHTML = '<h3>¡Gracias' + firstName.replace(/</g, '&lt;') +
-          '!</h3><p>Your message is on its way. I\'ll be in touch soon.</p>';
-        form.replaceWith(card);
-      };
-
+      let ok = false;
       try {
         const res = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { Accept: 'application/json' }
         });
-        showThanks();
+        ok = res.ok;
       } catch (err) {
-        // Network failure: still confirm to the visitor.
-        showThanks();
+        ok = false;
+      }
+
+      if (ok) {
+        const card = document.createElement('div');
+        card.className = 'thank-you';
+        card.setAttribute('role', 'status');
+        card.innerHTML = '<h3>¡Gracias' + firstName.replace(/&/g, '&amp;').replace(/</g, '&lt;') +
+          '!</h3><p>Your message is on its way. I\'ll be in touch soon.</p>';
+        form.replaceWith(card);
+      } else {
+        formError.hidden = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message →';
       }
     });
     // Goodreads shelf: load the widget script only when the section nears the viewport,
