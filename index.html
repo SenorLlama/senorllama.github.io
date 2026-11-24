@@ -370,7 +370,7 @@
       </article>
 
       <article class="talk reveal">
-        <a class="talk-art" href="https://www.linkedin.com/feed/update/urn:li:share:7461116930205057024/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <a class="talk-art" href="talks/continuous-strategy/" tabindex="-1" aria-hidden="true">
           <img src="assets/img/speaking/ai-dev-summit-2026.webp" alt="" width="480" height="480" loading="lazy" decoding="async">
         </a>
         <div class="talk-body">
@@ -379,10 +379,11 @@
             <time datetime="2026-05-27">May 27, 2026</time>
             <span>San Francisco</span>
           </div>
-          <h3 class="talk-title">Continuous Strategy: What to Automate, What to Keep Human</h3>
+          <h3 class="talk-title"><a href="talks/continuous-strategy/">Continuous Strategy: What to Automate, What to Keep Human</a></h3>
           <p class="talk-event">AI Dev Summit San Francisco, with DeveloperWeek Management</p>
           <p class="talk-desc">A framework for engineering and product leaders, drawn from research at Pulley on where AI creates leverage and where human judgment still wins.</p>
           <div class="talk-links">
+            <a href="talks/continuous-strategy/">Slides and notes →</a>
             <a href="https://www.linkedin.com/feed/update/urn:li:share:7461116930205057024/" target="_blank" rel="noopener">Announcement ↗</a>
           </div>
         </div>
@@ -668,6 +669,13 @@
         if (chip) chip.click();
       });
     });
+
+    // Links from talk pages (/?looking=...#contact) preselect a chip
+    try {
+      const want = new URLSearchParams(location.search).get('looking');
+      const chip = want && Array.from(document.querySelectorAll('.looking-chip')).find(c => c.dataset.value === want);
+      if (chip) chip.click();
+    } catch (e) {}
 
     // Contact form: AJAX submit to Formspree. Thank-you card only on success,
     // otherwise keep what they typed and show an error they can act on.

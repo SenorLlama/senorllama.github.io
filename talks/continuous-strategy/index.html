@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continuous Strategy: What to Automate, What to Keep Human | Marvin Guerra</title>
+  <meta name="description" content="Slides and speaker notes from Marvin Guerra&#x27;s keynote at AI Dev Summit San Francisco: a framework for engineering and product leaders on what to automate and what to keep human when deciding who works on what.">
+  <meta name="author" content="Marvin Guerra">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marvinguerra.com/talks/continuous-strategy/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Continuous Strategy: What to Automate, What to Keep Human">
+  <meta property="og:description" content="Slides and speaker notes from Marvin Guerra's keynote at AI Dev Summit San Francisco.">
+  <meta property="og:url" content="https://marvinguerra.com/talks/continuous-strategy/">
+  <meta property="og:image" content="https://marvinguerra.com/assets/img/talks/continuous-strategy/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Title slide: Continuous Strategy, What to Automate, What to Keep Human, by Marvin Guerra">
+  <meta property="og:site_name" content="Marvin Guerra">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Continuous Strategy: What to Automate, What to Keep Human">
+  <meta name="twitter:description" content="Slides and speaker notes from Marvin Guerra's keynote at AI Dev Summit San Francisco.">
+  <meta name="twitter:image" content="https://marvinguerra.com/assets/img/talks/continuous-strategy/og.jpg">
+  <meta name="twitter:site" content="@SenorLlama">
+  <meta name="twitter:creator" content="@SenorLlama">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "PresentationDigitalDocument",
+      "@id": "https://marvinguerra.com/talks/continuous-strategy/#deck",
+      "name": "Continuous Strategy: What to Automate, What to Keep Human",
+      "description": "Slides and speaker notes from Marvin Guerra's keynote at AI Dev Summit San Francisco: a framework for engineering and product leaders on what to automate and what to keep human when deciding who works on what.",
+      "url": "https://marvinguerra.com/talks/continuous-strategy/",
+      "inLanguage": "en",
+      "image": "https://marvinguerra.com/assets/img/talks/continuous-strategy/og.jpg",
+      "author": {
+        "@type": "Person",
+        "@id": "https://marvinguerra.com/#person",
+        "name": "Marvin Guerra",
+        "url": "https://marvinguerra.com/"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://marvinguerra.com/assets/docs/continuous-strategy-slides.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "about": {
+        "@id": "https://marvinguerra.com/talks/continuous-strategy/#event"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://marvinguerra.com/talks/continuous-strategy/#event",
+      "name": "AI Dev Summit San Francisco",
+      "description": "Keynote by Marvin Guerra: Continuous Strategy: What to Automate, What to Keep Human.",
+      "startDate": "2026-05-27T16:30:00-07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "AI Dev Summit",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "performer": {
+        "@id": "https://marvinguerra.com/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Marvin Guerra",
+          "item": "https://marvinguerra.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Speaking",
+          "item": "https://marvinguerra.com/#speaking"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Continuous Strategy",
+          "item": "https://marvinguerra.com/talks/continuous-strategy/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/llama-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15110f" media="(prefers-color-scheme: dark)">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="talk-page">
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-monogram" src="/assets/img/llama-icon-96.png" alt="" width="38" height="38">
+        <span class="nav-name">Marvin Guerra</span>
+      </a>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#expertise">Expertise</a>
+        <a href="/#journey">Journey</a>
+        <a href="/#speaking" class="active">Speaking</a>
+        <a href="/#reading">Reading</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/docs/resume.pdf" class="nav-btn" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="deck">
+    <header class="deck-hero">
+      <a class="deck-back" href="/#speaking">← All talks</a>
+      <div class="talk-meta">
+        <span class="talk-kind">Keynote</span>
+        <time datetime="2026-05-27">May 27, 2026</time>
+        <span>San Francisco</span>
+      </div>
+      <h1 class="deck-title">Continuous Strategy: <em>What to Automate, What to Keep Human</em></h1>
+      <p class="deck-event">AI Dev Summit San Francisco, with DeveloperWeek Management</p>
+      <p class="deck-summary">Every planning season, managers end up in the same meeting: do we have the right people on the right work? This talk shares what I learned at Pulley trying to answer that with AI. The short version: let machines keep the data fresh and connected, and keep the judgment calls human. Below are all 21 slides with my speaker notes, so you can follow the full argument without the recording.</p>
+      <div class="deck-actions">
+        <a class="deck-btn" href="/assets/docs/continuous-strategy-slides.pdf" download>Download slides (PDF)</a>
+        <a class="deck-link" href="/?looking=Speaking%20Engagement#contact">Invite me to speak →</a>
+      </div>
+      <nav class="deck-toc" aria-label="Talk sections">
+        <p class="talk-list-label">In this talk</p>
+        <ol>
+          <li><a href="#opening">Opening</a> <span>01</span></li>
+          <li><a href="#the-problem">Why resource decisions are hard</a> <span>04</span></li>
+          <li><a href="#three-currencies">The three currencies</a> <span>09</span></li>
+          <li><a href="#the-loop">The continuous strategy loop</a> <span>11</span></li>
+          <li><a href="#closing">Making it count</a> <span>18</span></li>
+          <li><a href="#questions">Common questions</a> <span>Q&amp;A</span></li>
+        </ol>
+      </nav>
+    </header>
+
+    <section class="deck-chapter" id="opening" aria-labelledby="opening-h">
+      <h2 class="deck-chapter-title" id="opening-h">Opening</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-1">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-01.webp" alt="Slide 1. Continuous Strategy. What to Automate, What to Keep Human. Marvin Guerra. Head of Engineering, Pulley." width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-1"><span class="deck-slide-num">01</span>Continuous Strategy</a></h3>
+            <p>Welcome everyone. I&rsquo;m Marvin, Head of Engineering at Pulley. We started as a cap table management platform, but our real mission is helping founders succeed. That means we think a lot about how companies operate as they scale.</p>
+            <p>During my time at Pulley, the engineering team has tripled in size. And about six months ago I hit a moment where I realized I could not answer a pretty basic question: are my engineers working on the things that actually matter? I didn&rsquo;t have a good answer. That bothered me. So I started looking into whether AI could help.</p>
+            <p>Turns out the biggest lesson had nothing to do with AI. It was figuring out which parts of this problem a machine should handle and which parts I need to do myself. That&rsquo;s what I want to share. What I tried, what worked, and where I&rsquo;d tell you to keep the human in the loop.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-2">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-02.webp" alt="Slide 2. Where I&#x27;m Coming From. Executive Interviews. Talked to CEOs, VPs of Product, and CTOs at scaling companies about how they track whether their strategy is actually being executed. Real-World Testing. Used our own company&#x27;s real objectives, key results, and team allocations as the test case. AI Evaluation Systems. Researched and tested AI-driven evaluation to learn what&#x27;s worth automating vs. what just sounds impressive but adds no value. Drawing the Line. Had frank debates about what to automate vs. what only a human manager can do." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-2"><span class="deck-slide-num">02</span>Where I&#x27;m coming from</a></h3>
+            <p>So we talked to execs at scaling companies. CEOs, VPs of Product, CTOs. We focused not on the tools they used but on the results they observed.</p>
+            <p>We also took a hard look at ourselves. Compared our actual objectives to our people allocations and results.</p>
+            <p>We tested AI evaluation systems to see what holds up in practice.</p>
+            <p>And the most useful part was just arguing about it internally. What do managers actually need versus what should a machine handle.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-3">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-03.webp" alt="Slide 3. The Meeting We&#x27;ve. All Been In. &quot;Do we have the right people. on the right work?&quot;. At 50 engineers or 500, the conversation plays out the same way." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-3"><span class="deck-slide-num">03</span>The meeting we&#x27;ve all been in</a></h3>
+            <p>I&rsquo;m willing to bet most of you have been in this meeting. Planning season. Room full of managers. The conversation keeps circling one question: do we have the right people on the right work?</p>
+            <p>I&rsquo;ve been in this room at 500 engineers and at 50. Same conversation every time. Every team wants more headcount. Every lead feels stretched. Nobody can prove that the work lines up with what the company said matters.</p>
+            <p>Without shared facts, these conversations turn into negotiations. That&rsquo;s what sent me down this path. How do we get the conversation to start from data instead of everyone making their case?</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="the-problem" aria-labelledby="the-problem-h">
+      <h2 class="deck-chapter-title" id="the-problem-h">Why resource decisions are hard</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-4">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-04.webp" alt="Slide 4. Why Resource Decisions Are. the Hardest Management Problem. And why humans alone can&#x27;t keep up." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-4"><span class="deck-slide-num">04</span>Why resource decisions are the hardest management problem</a></h3>
+            <p>Now, resource decisions are a difficult management problem. Not because people are bad at them, but because humans alone can&rsquo;t keep up with how fast things change. Three challenges kept showing up in our research, and each one is a different opportunity to automate.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-5">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-05.webp" alt="Slide 5. Three Things Managers Struggle With. The Staleness. Trap. Decisions are outdated before the week is over. Hierarchy. Blindness. The full picture gets harder to hold as you scale. The Evaluation. Gap. How do you know if what you&#x27;re building is actually working?." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-5"><span class="deck-slide-num">05</span>Three things managers struggle with</a></h3>
+            <p>The first is what we call the staleness trap. Your decisions are outdated almost as soon as you make them.</p>
+            <p>The second is hierarchy blindness. The full picture from company objectives down to individual people is really hard to hold in your head, and it gets harder every time you grow.</p>
+            <p>And the third is the evaluation gap. Most teams can&rsquo;t actually tell you if what they&rsquo;re building is working.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-6">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-06.webp" alt="Slide 6. The Staleness Trap. Legacy code surfaces. mid-sprint. Scope changes overnight. A key engineer. goes on leave. Capacity shifts untracked. Board reshuffles. priorities. Roadmap invalidated. The Insight. The problem isn&#x27;t bad decisions. It&#x27;s that information decays. faster than any human can refresh it. This is a perfect automation target." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-6"><span class="deck-slide-num">06</span>The staleness trap</a></h3>
+            <p>Take the staleness trap. You approve a plan on Monday. By Wednesday, the world has moved. Legacy code shows up mid-sprint. A key engineer goes on leave. The board changes priorities.</p>
+            <p>The problem isn&rsquo;t that you made a bad call. The information went stale before you could act on it.</p>
+            <p>And this is the kind of problem that&rsquo;s actually perfect for automation. Keeping data fresh is tedious and repetitive. Let a machine do it. But what you decide to do with that fresh data? That&rsquo;s still on you.</p>
+            <p>Even with fresh data though, there&rsquo;s a visibility problem.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-7">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-07.webp" alt="Slide 7. Hierarchy Blindness. Company Objectives. Department Goals. Projects. People (shared across teams). Managers see their slice. Almost nobody holds. the full picture. We moved a staff engineer from Platform to lead our new AI team. Product depended on Platform. One move affected three teams." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-7"><span class="deck-slide-num">07</span>Hierarchy blindness</a></h3>
+            <p>As a company scales, you get this chain. Objectives become goals, goals become projects, and projects depend on people. And those people are usually shared across teams. Keeping track of how all of that connects gets really hard, really fast.</p>
+            <p>At Pulley, we wanted to start an AI team and the plan was to move a staff engineer from the Platform team to lead it. Seemed straightforward, but Product depended on Platform for critical integrations. One staffing change and suddenly three teams are affected. Nobody saw it coming except leadership, because they were the only ones with the full picture.</p>
+            <p>That&rsquo;s hierarchy blindness. Every team lead sees their piece. Nobody sees it all.</p>
+            <p>Mapping those connections is something machines are way better at. But deciding what to do when the connections conflict, that takes a person.</p>
+            <p>Even if you solve staleness and visibility though, there&rsquo;s a third problem that&rsquo;s harder to spot.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-8">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-08.webp" alt="Slide 8. The Evaluation Gap. Are we measuring the right things?. KRs that don&#x27;t capture what the objective actually needs. Are projects delivering outcomes?. Milestones hit, but no measurable impact on the goal. Are teams healthy and sustainable?. No systematic way to assess workload, focus, or morale. What We Found. Researching AI evaluation across real orgs surfaced gaps nobody expected." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-8"><span class="deck-slide-num">08</span>The evaluation gap</a></h3>
+            <p>The evaluation gap is the hardest one to spot because everything looks fine on the surface.</p>
+            <p>You look at the OKRs and they seem reasonable, but when you dig in, teams have KRs about &lsquo;growth&rsquo; with no revenue metrics, or &lsquo;customer trust&rsquo; with no way to measure satisfaction. They&rsquo;re not tracking the right things.</p>
+            <p>Or they hit milestones and check the box, but nothing actually moves on the goal. Everyone feels productive, but the needle isn&rsquo;t moving.</p>
+            <p>And there&rsquo;s usually no systematic way to know if workload and morale are sustainable.</p>
+            <p>And these aren&rsquo;t edge cases. Smart people wrote these OKRs in good faith, but when nobody catches the gaps, they compound over time.</p>
+            <p>Stale data, partial visibility, untested assumptions. Most companies are dealing with all three and don&rsquo;t realize it.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="three-currencies" aria-labelledby="three-currencies-h">
+      <h2 class="deck-chapter-title" id="three-currencies-h">The three currencies</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-9">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-09.webp" alt="Slide 9. The Three Currencies Framework. What you&#x27;re actually investing, and what&#x27;s hardest to get back." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-9"><span class="deck-slide-num">09</span>The three currencies framework</a></h3>
+            <p>To understand what that actually costs you, you have to look at what you&rsquo;re spending. Every organization invests three currencies. Once you see them clearly, it changes how you think about automation.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-10">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-10.webp" alt="Slide 10. Every Organization Invests Three Currencies. They are not equally renewable. Capital. Most Flexible. Money, budget. Can raise more, cut costs, or reallocate. Your finance team owns the tracking. Most companies manage this well. Time. Somewhat Flexible. Deadlines and milestones. Project management tools track this, but poorly connected to strategic outcomes. People. Scarcest. Attention, capacity, expertise. You can&#x27;t create more senior engineers by next quarter. Misallocation costs are irreversible. And nobody owns the tracking." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-10"><span class="deck-slide-num">10</span>Every organization invests three currencies</a></h3>
+            <p>Some are easier to replace than others.</p>
+            <p>Capital is the most flexible. Money, budget. You can raise more, cut costs, move things around. Most companies track this well because finance owns it.</p>
+            <p>Time has some flexibility, but there&rsquo;s always a cost. PM tools track deadlines and milestones, but they rarely tie them back to strategic outcomes.</p>
+            <p>And then there&rsquo;s people. This is the one I care about most. Attention, capacity, expertise. You can&rsquo;t create more senior engineers by next quarter. When you put someone on the wrong thing for three months, that cost never shows up on a balance sheet, but you feel it everywhere. And unlike the other two, nobody owns the tracking.</p>
+            <p>Most companies have solid financial controls. Decent project timelines. And almost no way to answer: are our best people working on what matters most?</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="the-loop" aria-labelledby="the-loop-h">
+      <h2 class="deck-chapter-title" id="the-loop-h">The continuous strategy loop</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-11">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-11.webp" alt="Slide 11. The Continuous Strategy Loop. Four phases for protecting your scarcest currency." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-11"><span class="deck-slide-num">11</span>The continuous strategy loop</a></h3>
+            <p>That&rsquo;s the question we set out to answer. And what we landed on is a framework we call the Continuous Strategy Loop.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-12">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-12.webp" alt="Slide 12. Four Phases of Continuous Strategy. Structure. Make the full strategy visible: objectives, key results, projects, and people. Monitor. Track workload, alignment, and risk signals continuously instead of periodically. Synthesize. Turn raw signals into decision-ready briefs. Stop collecting status. Adjust. Make resource moves and track cascading effects. Document the why." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-12"><span class="deck-slide-num">12</span>Four phases of continuous strategy</a></h3>
+            <p>It has four phases and they build on each other. You start by making the full strategy visible. Then you track signals continuously instead of waiting for the quarterly check-in. You turn those signals into something a manager can actually act on. And when you make a move, you document why so the organization remembers. For each one I&rsquo;ll show you what we automated and what we kept human.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-13">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-13.webp" alt="Slide 13. Structure Your Strategy Explicitly. Objectives. Key Results. Projects. People. WHAT WE AUTOMATED. Connected OKRs, Linear, and capacity plans into one centralized doc via MCPs. Ran an AI review that caught misaligned projects and capacity allocation. WHAT WE KEPT HUMAN. Deciding what actually matters. No algorithm should set your strategy. You have to bring the clarity." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-13"><span class="deck-slide-num">13</span>Phase 1: Structure your strategy explicitly</a></h3>
+            <p>Phase one is the foundation, and it&rsquo;s the most human step in the whole loop.</p>
+            <p>At Pulley, our strategy lived everywhere. OKRs, docs, and notes in Notion, project tracking in Linear, capacity plans in spreadsheets. There was no single place you could go and see the full picture. So we connected all of it using MCPs and pulled everything into one centralized doc in Notion. Objectives to key results to projects to people, all in one place where everyone could see it.</p>
+            <p>From there, we ran it through an AI review to see if it all lined up. It caught a project that didn&rsquo;t tie back to any company objective and a good chunk of engineering capacity going toward something that wasn&rsquo;t even a top priority. The kind of stuff that&rsquo;s impossible to see when everyone&rsquo;s just looking at their own piece.</p>
+            <p>The one thing you can&rsquo;t automate is deciding what actually matters. If your strategy is something like &lsquo;become more innovative,&rsquo; no machine is going to help you figure out what that means. You have to bring the clarity. Automation just amplifies it.</p>
+            <p>Once you have that structure in place, phase two is about watching it.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-14">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-14.webp" alt="Slide 14. Monitor Continuously, Not Periodically. Capacity Risk. 3+ projects. Velocity declining 2+ sprints. Context-switching across 4+ codebases. Focus Alignment. Majority of team effort on low-priority objectives. Primary workstreams not tied to top-3 goals. Delivery Risk. Scope creeping without timeline adjustment. Dependencies unresolved for 2+ weeks. WHAT WE AUTOMATED. Connected project tracker, calendar, and code repo signals to surface delays, workload, and alignment issues. WHAT WE KEPT HUMAN. Interpreting context behind the signals. A flag isn&#x27;t a diagnosis. Only a manager knows the story behind the number." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-14"><span class="deck-slide-num">14</span>Phase 2: Monitor continuously, not periodically</a></h3>
+            <p>Phase two is the biggest automation win in the whole loop.</p>
+            <p>Most of you are probably doing monitoring the same way we were. Asking everyone to update a spreadsheet before Monday&rsquo;s meeting. That&rsquo;s work a machine should be doing, not your team.</p>
+            <p>We started tracking things like whether someone is spread across too many projects, whether teams are actually spending effort on top priorities, and whether scope is creeping without anyone adjusting the timeline.</p>
+            <p>We connected our project tracker, calendars, and code repos to surface these automatically. Even partial integration was a huge upgrade over how we were doing it before.</p>
+            <p>The signals alone don&rsquo;t tell the full story though. Something might look at risk because an engineer was out for a week, or because the team intentionally cut scope. You still need a person to look at the data and decide what to do about it.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-15">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-15.webp" alt="Slide 15. Synthesize, Don&#x27;t Collect Status. BEFORE. Everyone writes their update. The manager reads them all. The meeting clarifies what was written. rather than deciding what to do. AFTER. The system synthesizes signals:. What changed?. What&#x27;s at risk?. What decisions need to be made?. The meeting becomes about action. WHAT WE AUTOMATED. Turned raw signals into a weekly decision brief: 3 things that changed, 2 risks to watch, 1 decision needed now. WHAT WE KEPT HUMAN. The meeting itself. Decide what to act on. Even without AI: ask &quot;What changed since last week?&quot; rather than &quot;What did you work on?&quot;." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-15"><span class="deck-slide-num">15</span>Phase 3: Synthesize, don&#x27;t collect status</a></h3>
+            <p>Phase three is about turning those signals into something you can act on.</p>
+            <p>Think about how most teams run Monday kickoffs. Everyone writes their update, manager reads them all, and the meeting ends up clarifying what was written instead of deciding what to do about it.</p>
+            <p>We replaced that with an AI-generated weekly brief that covers what changed, what risks to watch, and what needs a decision now. The meeting goes straight to action instead.</p>
+            <p>What to act on, what to deprioritize, who to talk to, that&rsquo;s still the manager&rsquo;s call. But now you&rsquo;re spending your time on decisions instead of compiling status.</p>
+            <p>And you don&rsquo;t even need AI to start. Just change the question from &lsquo;what did you work on?&rsquo; to &lsquo;what changed since last week?&rsquo; That alone shifts the whole conversation.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-16">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-16.webp" alt="Slide 16. Adjust and Track the Why. Project slows down. KR becomes at-risk. Objective may need re-scoping. WHAT WE AUTOMATED. Modeled cascading effects before making moves. Documented every change with the reasoning behind it, so future decisions had real context. WHAT WE KEPT HUMAN. The trade-off call. Sitting across from the person. being moved and explaining the why." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-16"><span class="deck-slide-num">16</span>Phase 4: Adjust and track the why</a></h3>
+            <p>The last phase is about making changes and tracking why you made them.</p>
+            <p>When you move someone, everything downstream shifts. At most companies, you don&rsquo;t see the impact until something breaks. At Pulley, we used AI to model those effects before committing, so we could see what would happen and make a better call.</p>
+            <p>We also documented every change with the reasoning behind it. So when a similar situation came up later, we weren&rsquo;t guessing. We had real context.</p>
+            <p>The decision itself is still yours though. Should you reassign them? Extend the deadline? Cut scope? That depends on things like relationships, morale, where someone is in their career. And at the end of the day, you have to sit across from the person being moved and explain the why. That&rsquo;s the part that actually matters, and no tool is going to do it for you.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-17">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-17.webp" alt="Slide 17. Structure. Monitor. Synthesize. Adjust." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-17"><span class="deck-slide-num">17</span>The loop</a></h3>
+            <p>Structure. Monitor. Synthesize. Adjust. That&rsquo;s the loop.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="closing" aria-labelledby="closing-h">
+      <h2 class="deck-chapter-title" id="closing-h">Making it count</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-18">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-18.webp" alt="Slide 18. Making In-Person Time Count. Once you automate the data work, here&#x27;s what your time together should focus on:. 1:1s. &quot;What are you working on?&quot;. &quot;What&#x27;s blocking your best work?&quot;. Team Meetings. Collecting status updates. Making decisions from the brief. Planning Sessions. Debating who&#x27;s busy. Starting from shared data, debating trade-offs. Check-ins. Monitoring progress. Coaching and unblocking. Automation doesn&#x27;t replace your time together. It makes that time worth showing up for." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-18"><span class="deck-slide-num">18</span>Making in-person time count</a></h3>
+            <p>So once that&rsquo;s running, your calendar looks the same. What changes is what happens in those meetings.</p>
+            <p>In 1:1s, instead of asking &lsquo;what are you working on?&rsquo; you ask &lsquo;what&rsquo;s blocking your best work?&rsquo; That shift from monitoring to coaching made a real difference for us. Other managers at Pulley started doing it within weeks.</p>
+            <p>In team meetings, you walk in with the brief already done and spend the time figuring out what to do about it.</p>
+            <p>And for planning, you start from shared data instead of debating who&rsquo;s busy. You&rsquo;re debating trade-offs, not facts. That meeting from the opening? This is how you fix it.</p>
+            <p>None of this replaces your time together. It just makes it count.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-19">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-19.webp" alt="Slide 19. What I&#x27;d Tell Myself. Six Months Ago. The hard part wasn&#x27;t the automation." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-19"><span class="deck-slide-num">19</span>What I&#x27;d tell myself six months ago</a></h3>
+            <p>Six months ago, I thought the hard part was going to be the automation. What model to use. How to evaluate it. How to make it fast enough. Turns out the hard part was figuring out what should stay human.</p>
+            <p>I started this for myself. I couldn&rsquo;t answer whether my engineers were working on the right things. Once I had something that worked, we turned it into a shared skills database that other managers could use. They started adopting it, giving feedback, and we kept improving it. Pretty soon the product, design, and engineering orgs were all running on it.</p>
+            <p>We still have that planning meeting from the beginning. But now everyone walks in with the same picture. And that didn&rsquo;t come from a tool. It came from deciding to do things differently. The tool just made it easier.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-20">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-20.webp" alt="Slide 20. Automate the grunt work. Protect the judgment calls. That&#x27;s continuous strategy." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-20"><span class="deck-slide-num">20</span>Automate the grunt work. Protect the judgment calls.</a></h3>
+            <p>Automate the grunt work. Protect the judgment calls. That&rsquo;s continuous strategy.</p>
+            <p>You don&rsquo;t need to go build an AI system to start doing this. Pick one thing your managers are doing manually that a machine should handle, automate that, and use the time you get back for better conversations with your team.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-21">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/continuous-strategy/slide-21.webp" alt="Slide 21. Thank You. Marvin Guerra. Head of Engineering, Pulley. Let&#x27;s talk about how you&#x27;re tackling this. Connect with me:. /in/marvinguerra." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-21"><span class="deck-slide-num">21</span>Thank you</a></h3>
+            <p>Thank you. This is still a work in progress for us. We&rsquo;re constantly improving how we do this, so I&rsquo;d love to hear what you&rsquo;re trying at your companies. Feel free to find me after or connect on LinkedIn.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="deck-chapter deck-qa" id="questions" aria-labelledby="questions-h">
+      <h2 class="deck-chapter-title" id="questions-h">Common questions</h2>
+      <p class="deck-qa-lead">Questions that tend to come up after this talk, and how I answer them.</p>
+      <div class="deck-qa-list">
+        <details class="deck-qa-item">
+          <summary>What tools do you recommend?</summary>
+          <p>Start with the framework, not the tools. Figure out which of your processes are humans doing machine work. That&rsquo;s your first automation target. The tool matters less than the clarity.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>Isn&rsquo;t this just OKR software?</summary>
+          <p>OKR tools help you write objectives. This is about the ongoing loop: are the objectives coherent, is the work connected, are the people sustainably allocated? Most OKR tools stop at the writing step. The gap is everything that happens after.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>How do you handle resistance to AI?</summary>
+          <p>Don&rsquo;t pitch it as AI. Pitch it as &lsquo;I want to stop spending Sunday night compiling the Monday update.&rsquo; Lead with what you&rsquo;re automating away, not the technology doing it.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>Where do we start?</summary>
+          <p>Pick one thing you do manually that a machine should do. For most teams, it&rsquo;s status compilation. Automate that first. Then use the time you saved for better 1:1s.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>How do you get leadership buy-in for this?</summary>
+          <p>Show them the time cost. Add up how many hours per week your managers spend compiling updates, chasing status, and preparing for meetings. That number is usually shocking enough to start the conversation.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>What about smaller teams? Does this apply at 20 people?</summary>
+          <p>The problems show up earlier than you&rsquo;d think. At 20 people you might have 3 or 4 teams sharing engineers across projects. The complexity isn&rsquo;t about headcount, it&rsquo;s about the number of dependencies. If you&rsquo;ve ever had the &lsquo;who&rsquo;s actually working on what&rsquo; conversation, this applies to you.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>How do you prevent the monitoring from feeling like surveillance?</summary>
+          <p>Huge question. Two things. First, the signals should be about work patterns, not individual performance. &lsquo;This project has no status update in two weeks&rsquo; is different from &lsquo;this person isn&rsquo;t productive.&rsquo; Second, share the dashboard with the team, not just leadership. If people can see their own data and it helps them, it stops feeling like surveillance and starts feeling like a tool.</p>
+        </details>
+        <details class="deck-qa-item">
+          <summary>How long did this research take and what surprised you most?</summary>
+          <p>About six months of focused work. The biggest surprise was how consistent the problems were across company sizes. We expected the challenges at a 500-person company to look different from a 50-person one. They don&rsquo;t. The scale changes but the pattern is identical.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="deck-cta">
+    <div class="deck-cta-inner">
+      <h2 class="deck-cta-title">Want this talk at <em>your event?</em></h2>
+      <p>I speak on engineering leadership, AI adoption, and product judgment. Happy to tailor this one for your audience.</p>
+      <a class="btn-submit deck-cta-btn" href="/?looking=Speaking%20Engagement#contact">Get in touch →</a>
+    </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Marvin Guerra</span>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/marvinguerra/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/SenorLlama" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.instagram.com/senorllama/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://goodreads.com/senorllama" target="_blank" rel="noopener">Goodreads</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="/assets/js/talk.js" defer></script>
+  <script data-goatcounter="https://marvinguerra.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
