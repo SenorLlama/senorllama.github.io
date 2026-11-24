@@ -95,12 +95,13 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/img/llama-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/llama-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -108,13 +109,13 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#top" class="nav-logo">
-        <img class="nav-monogram" src="assets/img/llama-icon.png" alt="" width="38" height="38">
+        <img class="nav-monogram" src="assets/img/llama-icon-96.png" alt="" width="38" height="38">
         <span class="nav-name">Marvin Guerra</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <a href="#expertise">Expertise</a>
         <a href="#journey">Journey</a>
         <a href="#speaking">Speaking</a>
@@ -138,9 +139,12 @@
         </div>
         <h1 class="hero-name">Marvin <em>Guerra</em></h1>
         <p class="hero-lead">Currently serving as Head of Engineering at <strong>Pulley</strong>, where I focus on team development, product strategy, and engineering leadership to deliver scalable equity management solutions. My career has taken me through leadership roles across AI, Growth, Payments, and Infrastructure at companies like Figma, Webflow, Fast, Quibi, and GoFundMe.</p>
+        <button class="hero-more-toggle" type="button" aria-expanded="false" aria-controls="hero-more">More about me <span aria-hidden="true">↓</span></button>
+        <div class="hero-more" id="hero-more">
         <p class="hero-lead">Along the way, I've advised early-stage startups, championed Diversity, Equity, and Inclusion, and built software systems spanning event pipelines, experimentation platforms, payments, and data warehousing.</p>
         <p class="hero-lead">I'm a proud immigrant from Peru 🇵🇪 and a first-generation MIT 🦫 graduate, experiences that shape how I lead, build, and connect. Outside of work, I'm powered by good coffee ☕ and driven by the rhythms of salsa, reggaeton, and hip-hop 🎧.</p>
         <p class="hero-lead">I'm here not just for work, but for community, creativity, and meaningful collaboration. Let's build something great together.</p>
+        </div>
         <div class="hero-social">
           <a href="https://www.linkedin.com/in/marvinguerra/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -237,7 +241,7 @@
         <div>
           <div class="job-headline">
             <span class="job-company">Pulley</span>
-            <span class="job-role">Head of Engineering</span>
+            <span class="job-role">Head of Engineering · 2025–Present</span>
           </div>
           <p class="job-quote">Building high-performing teams to deliver scalable equity management solutions for high-growth startups.</p>
           <div class="job-tags">
@@ -249,11 +253,11 @@
       </a>
 
       <a class="job reveal" href="https://www.figma.com" target="_blank" rel="noopener">
-        <div class="job-logo" role="img" aria-label="Figma" style="background-image:url('assets/img/work/figma.png')"></div>
+        <div class="job-logo" role="img" aria-label="Figma" style="background-image:url('assets/img/work/figma.webp')"></div>
         <div>
           <div class="job-headline">
             <span class="job-company">Figma</span>
-            <span class="job-role">Engineering Manager, Editor AI</span>
+            <span class="job-role">Engineering Manager, Editor AI · 2023–2025</span>
           </div>
           <p class="job-quote">Scaled the Editor AI team and spearheaded AI-powered productivity tools that significantly enhanced user engagement.</p>
           <div class="job-tags">
@@ -265,11 +269,11 @@
       </a>
 
       <a class="job reveal" href="https://webflow.com" target="_blank" rel="noopener">
-        <div class="job-logo" role="img" aria-label="Webflow" style="background-image:url('assets/img/work/webflow.jpeg')"></div>
+        <div class="job-logo" role="img" aria-label="Webflow" style="background-image:url('assets/img/work/webflow.webp')"></div>
         <div>
           <div class="job-headline">
             <span class="job-company">Webflow</span>
-            <span class="job-role">Senior Engineering Manager, Growth</span>
+            <span class="job-role">Senior Engineering Manager, Growth · 2021–2023</span>
           </div>
           <p class="job-quote">Expanded the Growth Pillar from 3 to 12 engineers, optimizing acquisition and activation funnels at scale.</p>
           <div class="job-tags">
@@ -281,11 +285,11 @@
       </a>
 
       <a class="job reveal" href="https://en.wikipedia.org/wiki/Quibi" target="_blank" rel="noopener">
-        <div class="job-logo" role="img" aria-label="Quibi" style="background-image:url('assets/img/work/quibi.jpeg')"></div>
+        <div class="job-logo" role="img" aria-label="Quibi" style="background-image:url('assets/img/work/quibi.webp')"></div>
         <div>
           <div class="job-headline">
             <span class="job-company">Quibi</span>
-            <span class="job-role">Engineering Manager, Commerce</span>
+            <span class="job-role">Engineering Manager, Commerce · 2019–2020</span>
           </div>
           <p class="job-quote">Designed subscription processing architecture and managed the engineering partnership with T-Mobile.</p>
           <div class="job-tags">
@@ -325,6 +329,7 @@
       <span class="section-meta">Speaking</span>
     </div>
 
+    <p class="talk-list-label">Past talks</p>
     <div class="talk-list">
       <article class="talk reveal">
         <a class="talk-art" href="https://www.linkedin.com/feed/update/urn:li:share:7506439325828550656/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -367,7 +372,32 @@
       <div class="talk-list-end"></div>
     </div>
 
-    <p class="speaking-cta">Planning an event? I speak on engineering leadership, AI adoption, and product-led growth. <a href="#contact" data-looking="Speaking Engagement">Invite me to speak →</a></p>
+    <div class="speaker-kit">
+      <div class="speaker-kit-head">
+        <h3 class="speaker-kit-title">For organizers</h3>
+        <p>Planning an event? Here's everything you need for the program.</p>
+      </div>
+      <div class="speaker-kit-grid">
+        <div>
+          <h4 class="speaker-kit-label">Topics</h4>
+          <ul class="speaker-kit-topics">
+            <li>AI adoption: what to automate and what to keep human</li>
+            <li>Growing product judgment on AI-powered teams</li>
+            <li>Building and scaling engineering teams</li>
+            <li>Product-led growth and experimentation</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="speaker-kit-label">Short bio</h4>
+          <p class="speaker-kit-bio" id="speaker-bio">Marvin Guerra is Head of Engineering at Pulley, leading the teams that build equity management for high-growth startups. Before Pulley, Marvin led engineering teams across AI, growth, and payments at Figma, Webflow, and Quibi. A first-generation MIT graduate and proud immigrant from Peru, Marvin speaks on engineering leadership, AI adoption, and product-led growth.</p>
+        </div>
+      </div>
+      <div class="speaker-kit-actions">
+        <a href="#contact" data-looking="Speaking Engagement">Invite me to speak →</a>
+        <a href="assets/img/profile.jpg" download="marvin-guerra-headshot.jpg">Download headshot ↓</a>
+        <button type="button" class="speaker-kit-copy" data-copy="speaker-bio">Copy bio</button>
+      </div>
+    </div>
   </section>
 
   <!-- Reading (Goodreads) -->
@@ -517,6 +547,35 @@
       nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
+    // Mobile menu toggle, announced to screen readers via aria-expanded
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-links');
+    const setMenu = open => {
+      navMenu.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    };
+    navToggle.addEventListener('click', () => setMenu(!navMenu.classList.contains('open')));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+    // Hero "More about me" (only shown on small screens)
+    const moreToggle = document.querySelector('.hero-more-toggle');
+    moreToggle.addEventListener('click', () => {
+      const open = moreToggle.getAttribute('aria-expanded') !== 'true';
+      moreToggle.setAttribute('aria-expanded', String(open));
+      document.getElementById('hero-more').classList.toggle('open', open);
+      moreToggle.firstChild.textContent = open ? 'Less about me ' : 'More about me ';
+    });
+
+    // Speaker kit: copy bio to clipboard
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = document.getElementById(btn.dataset.copy).textContent.trim();
+        try { await navigator.clipboard.writeText(text); btn.textContent = 'Copied ✓'; }
+        catch (err) { btn.textContent = 'Select and copy above'; }
+        setTimeout(() => { btn.textContent = 'Copy bio'; }, 2400);
+      });
+    });
+
     // Smooth anchor scroll + close mobile menu
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
@@ -525,7 +584,7 @@
           e.preventDefault();
           t.scrollIntoView({ behavior: 'smooth' });
         }
-        document.querySelector('.nav-links').classList.remove('open');
+        setMenu(false);
       });
     });
 
