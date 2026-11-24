@@ -430,6 +430,26 @@ textarea:focus-visible {
   margin: 0;
   text-wrap: pretty;
 }
+.expertise-cell .expertise-stat {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--hairline-12);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.expertise-stat strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  color: var(--clay);
+}
 
 /* ---------- Journey ---------- */
 .journey {
