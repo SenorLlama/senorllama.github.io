@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Score Takes Care of Itself: Growing Product Judgement When AI Does the Work | Marvin Guerra</title>
+  <meta name="description" content="Slides and speaker notes from Marvin Guerra&#x27;s keynote at Product-Led Summit San Francisco: why faster delivery with AI can shrink the chances engineers get to build product judgment, and four practices to keep those reps in the work.">
+  <meta name="author" content="Marvin Guerra">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marvinguerra.com/talks/the-score-takes-care-of-itself/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Score Takes Care of Itself: Growing Product Judgement When AI Does the Work">
+  <meta property="og:description" content="Slides and speaker notes from Marvin Guerra's keynote at Product-Led Summit San Francisco.">
+  <meta property="og:url" content="https://marvinguerra.com/talks/the-score-takes-care-of-itself/">
+  <meta property="og:image" content="https://marvinguerra.com/assets/img/talks/the-score-takes-care-of-itself/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Title slide: The Score Takes Care of Itself, Growing Product Judgment When AI Does the Work, by Marvin Guerra">
+  <meta property="og:site_name" content="Marvin Guerra">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Score Takes Care of Itself: Growing Product Judgement When AI Does the Work">
+  <meta name="twitter:description" content="Slides and speaker notes from Marvin Guerra's keynote at Product-Led Summit San Francisco.">
+  <meta name="twitter:image" content="https://marvinguerra.com/assets/img/talks/the-score-takes-care-of-itself/og.jpg">
+  <meta name="twitter:site" content="@SenorLlama">
+  <meta name="twitter:creator" content="@SenorLlama">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "PresentationDigitalDocument",
+      "@id": "https://marvinguerra.com/talks/the-score-takes-care-of-itself/#deck",
+      "name": "The Score Takes Care of Itself: Growing Product Judgement When AI Does the Work",
+      "description": "Slides and speaker notes from Marvin Guerra's keynote at Product-Led Summit San Francisco: why faster delivery with AI can shrink the chances engineers get to build product judgment, and four practices to keep those reps in the work.",
+      "url": "https://marvinguerra.com/talks/the-score-takes-care-of-itself/",
+      "inLanguage": "en",
+      "image": "https://marvinguerra.com/assets/img/talks/the-score-takes-care-of-itself/og.jpg",
+      "author": {
+        "@type": "Person",
+        "@id": "https://marvinguerra.com/#person",
+        "name": "Marvin Guerra",
+        "url": "https://marvinguerra.com/"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://marvinguerra.com/assets/docs/the-score-takes-care-of-itself-slides.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "about": {
+        "@id": "https://marvinguerra.com/talks/the-score-takes-care-of-itself/#event"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://marvinguerra.com/talks/the-score-takes-care-of-itself/#event",
+      "name": "Product-Led Summit San Francisco",
+      "description": "Keynote by Marvin Guerra: The Score Takes Care of Itself: Growing Product Judgement When AI Does the Work.",
+      "startDate": "2026-09-22",
+      "endDate": "2026-09-23",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Hyatt Regency San Francisco Airport",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Burlingame",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Product-Led Alliance"
+      },
+      "performer": {
+        "@id": "https://marvinguerra.com/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Marvin Guerra",
+          "item": "https://marvinguerra.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Speaking",
+          "item": "https://marvinguerra.com/#speaking"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "The Score Takes Care of Itself",
+          "item": "https://marvinguerra.com/talks/the-score-takes-care-of-itself/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/llama-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15110f" media="(prefers-color-scheme: dark)">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="talk-page">
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-monogram" src="/assets/img/llama-icon-96.png" alt="" width="38" height="38">
+        <span class="nav-name">Marvin Guerra</span>
+      </a>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#expertise">Expertise</a>
+        <a href="/#journey">Journey</a>
+        <a href="/#speaking" class="active">Speaking</a>
+        <a href="/#reading">Reading</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/docs/resume.pdf" class="nav-btn" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="deck">
+    <header class="deck-hero">
+      <a class="deck-back" href="/#speaking">← All talks</a>
+      <div class="talk-meta">
+        <span class="talk-kind">Keynote</span>
+        <time datetime="2026-09-22">Sep 22, 2026</time>
+        <span>San Francisco</span>
+      </div>
+      <h1 class="deck-title">The Score Takes Care of Itself: <em>Growing Product Judgement When AI Does the Work</em></h1>
+      <p class="deck-event">Product-Led Summit San Francisco</p>
+      <p class="deck-summary">AI has made shipping faster than ever, but the work it takes over is often where engineers used to build product judgment. Starting from Bill Walsh&rsquo;s idea that the score takes care of itself, this talk looks beneath delivery metrics, with lessons from Pulley, Webflow, and Figma and four practices for AI-native teams. Below are all 24 slides with my speaker notes, so you can follow the full argument without the recording.</p>
+      <div class="deck-actions">
+        <a class="deck-btn" href="/assets/docs/the-score-takes-care-of-itself-slides.pdf" download>Download slides (PDF)</a>
+        <a class="deck-link" href="/?looking=Speaking%20Engagement#contact">Invite me to speak →</a>
+      </div>
+      <nav class="deck-toc" aria-label="Talk sections">
+        <p class="talk-list-label">In this talk</p>
+        <ol>
+          <li><a href="#the-score">The score</a> <span>01</span></li>
+          <li><a href="#the-reps">Where do people get the reps?</a> <span>06</span></li>
+          <li><a href="#choosing">Choosing what to build</a> <span>11</span></li>
+          <li><a href="#four-practices">Four practices</a> <span>16</span></li>
+          <li><a href="#closing">Putting it into practice</a> <span>21</span></li>
+        </ol>
+      </nav>
+    </header>
+
+    <section class="deck-chapter" id="the-score" aria-labelledby="the-score-h">
+      <h2 class="deck-chapter-title" id="the-score-h">The score</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-1">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-01.webp" alt="Slide 1. GROWING PRODUCT JUDGMENT. THE SCORE TAKES. CARE OF ITSELF. Growing Product Judgment When AI Does the Work. Marvin Guerra, Head of Engineering, Pulley." width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-1"><span class="deck-slide-num">01</span>The Score Takes Care of Itself</a></h3>
+            <p>Thanks for having me. I&rsquo;m Marvin Guerra, Head of Engineering at Pulley.</p>
+            <p>One of the things I’m currently excited about is that the NFL season is back. And as I was preparing for my fantasy football drafts, I was reminded of one of the leadership books I keep coming back to: Bill Walsh&rsquo;s The Score Takes Care of Itself.</p>
+            <p>That&rsquo;s an interesting title for a football coach. Your job is to win games, and everybody can see the score. But he&rsquo;s telling you to put your attention somewhere else. That idea has shaped how I think about leading an engineering team.</p>
+            <p>To understand what Walsh meant, we need to remember the team he was trying to rebuild.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-2">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-02.webp" alt="Slide 2. THE SCORE. 1979: TWO WINS. FOURTEEN LOSSES. Bill Walsh’s first season with the San Francisco 49ers. STANDARD OF. PERFORMANCE." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-2"><span class="deck-slide-num">02</span>1979: two wins, fourteen losses</a></h3>
+            <p>Bill Walsh became head coach of the San Francisco 49ers in 1979. His first season ended with two wins and fourteen losses, the league&rsquo;s worst record.</p>
+            <p>He had a team to rebuild, and the results weren’t going to turn around overnight. He needed to give people something they could work on every day, even while they were losing.</p>
+            <p>He called that his Standard of Performance. It set clear expectations for how people prepared, practiced, and did their jobs across the organization.</p>
+            <p>Winning was still the goal. The standard gave everyone a way to contribute to it before the wins started showing up.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-3">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-03.webp" alt="Slide 3. BILL WALSH. Concentrate on what will produce results rather than on the results, the process rather than the prize. The Score Takes Care of Itself. 1981 SEASON. 13 WINS  /  3 LOSSES. SUPER BOWL XVI CHAMPIONS. Bill Walsh after Super Bowl XVI  ·  AP Photo." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-3"><span class="deck-slide-num">03</span>The process rather than the prize</a></h3>
+            <p>His message: “Concentrate on what will produce results rather than on the results, the process rather than the prize.”</p>
+            <p>By the 1981 season, the 49ers were thirteen and three. They finished that season by winning Super Bowl XVI.</p>
+            <p>The scoreboard told Walsh whether the team had won. It couldn&rsquo;t tell him what to work on at practice the next morning. His standard gave him a way to do that.</p>
+            <p>For an engineering team, part of that preparation is learning to make better product decisions.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-4">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-04.webp" alt="Slide 4. THE MANAGEMENT PRINCIPLE. JUDGMENT SITS UNDER THE SCORE. Results tell us what happened. Standards shape everyday work. Judgment guides the next decision. THE SCORE. Delivery and outcomes. UNDERNEATH. Judgment built through practice." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-4"><span class="deck-slide-num">04</span>Judgment sits under the score</a></h3>
+            <p>Can an engineer explain why a customer needs a change? Can they spot an assumption we haven&rsquo;t tested? Can they tell when we should wait instead of build?</p>
+            <p>Those decisions shape the product long before a metric moves.</p>
+            <p>That&rsquo;s what I mean by product judgment: using customer context and evidence to decide what&rsquo;s worth building, what can wait, and what we should change when we learn something new.</p>
+            <p>At Pulley, I had to turn that idea into everyday habits.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-5">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-05.webp" alt="Slide 5. FIRSTHAND EXPERIENCE. AT PULLEY, THE STANDARD CAME FIRST. Planning made commitments explicit. Retros changed how we worked. Post-mortems improved the system. 97 TO 5. open bugs. 90%+. drop in on-call load. 80%+. of commitments delivered on time." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-5"><span class="deck-slide-num">05</span>At Pulley, the standard came first</a></h3>
+            <p>At Pulley, I inherited an organization with ninety-seven open bugs, a demanding on-call rotation, and teams struggling to deliver predictably. I focused on better planning, retrospectives with clear follow-up actions, and blameless post-mortems that addressed recurring problems.</p>
+            <p>As we made those changes, open bugs went from ninety-seven to five. On-call load dropped by more than ninety percent. More than eighty percent of commitments were delivered on time. Those numbers mattered. But each week, I was looking at how we planned, how we learned from mistakes, and whether people could make better decisions the next time.</p>
+            <p>That’s how Walsh’s idea showed up in my own work. The numbers improved because we changed those everyday habits.</p>
+            <p>Now AI is changing how we work again. I want my team using it. There&rsquo;s real value in getting through repetitive work faster and having more time to try ideas. But it has made me ask which parts of the work were helping people learn, and what happens when AI takes over those parts.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="the-reps" aria-labelledby="the-reps-h">
+      <h2 class="deck-chapter-title" id="the-reps-h">Where do people get the reps?</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-6">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-06.webp" alt="Slide 6. AI AND THE DASHBOARD. OUTPUT IS EASY TO SEE. More code moves through review. More ideas become features. Learning needs its own evidence. PULL REQUESTS. FEATURES. VELOCITY. JUDGMENT. Illustrative trends." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-6"><span class="deck-slide-num">06</span>Output is easy to see</a></h3>
+            <p>When a task that took days takes hours, the improvement is easy to see. An idea that sat in a backlog becomes something we get to try.</p>
+            <p>But some of the time we saved used to include investigating a problem, trying an approach, and getting feedback from a colleague. Some of that effort was waste. Some of it was how the person learned.</p>
+            <p>We see that the task took less time. What we don&rsquo;t see is whether the engineer also lost a chance to understand the problem or learn from someone else&rsquo;s feedback.</p>
+            <p>That&rsquo;s why the Judgment tile is blank. Faster delivery doesn&rsquo;t answer that question.</p>
+            <p>That leaves me with a question.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-7">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-07.webp" alt="Slide 7. THE QUESTION. If AI does more of the work,. where do people get the reps?." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-7"><span class="deck-slide-num">07</span>If AI does more of the work, where do people get the reps?</a></h3>
+            <p>If AI does more of the work, where do people get the reps?</p>
+            <p>Think about something you&rsquo;re good at now. Where did you actually get good at it?</p>
+            <p>My favorite interview question is: “What is the biggest fire you&rsquo;ve caused at a prior company?”</p>
+            <p>I&rsquo;m listening for what they missed, how they responded, and what they do differently now. We don&rsquo;t need to recreate the fire, but we do need chances to make decisions and learn from them.</p>
+            <p>MIT is asking a similar question about its students. A few weeks ago, MIT published a report on how AI is changing learning on campus.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-8">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-08.webp" alt="Slide 8. MIT, AUGUST 2026. “COGNITIVE SURRENDER”. Getting the right answer from a chatbot. can create the illusion of learning. MIT AI and Education Report, August 2026." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-8"><span class="deck-slide-num">08</span>Cognitive surrender</a></h3>
+            <p>MIT&rsquo;s students told the committee they felt most tempted to hand the thinking over to AI when they were afraid of missing a deadline. That&rsquo;s a situation every engineering team recognizes. You&rsquo;re under pressure, and there&rsquo;s a tool ready with an answer.</p>
+            <p>The report warns that relying too heavily on that answer may weaken learning. It points to early signs of harm to critical thinking, memory, and confidence. It describes “cognitive surrender”: turning to AI as soon as the work gets difficult.</p>
+            <p>MIT also reports fewer students attending office hours or joining online discussions. The committee heard accounts of fewer in-person study groups, too. That means fewer conversations where someone asks you to explain your thinking and helps you work through what you don&rsquo;t understand.</p>
+            <p>The same risk shows up in engineering: the task gets done, but the engineer misses the practice of deciding how to solve it. What needs to stay in the work for people to keep learning?</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-9">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-09.webp" alt="Slide 9. THE SKILL CODE. THREE CONDITIONS SUPPORT SKILL. Challenge: work near your limits. Complexity: understand the context. Connection: learn with an expert. MATT BEANE. The Skill Code, 2024." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-9"><span class="deck-slide-num">09</span>Three conditions support skill</a></h3>
+            <p>I recently read a book called The Skill Code. In it the author describes three conditions that help people build skill: challenge, complexity, and connection.</p>
+            <p>Challenge means enough difficulty to stretch you. Complexity means understanding the wider context of the task. Connection means a relationship of trust and respect with someone more expert than you.</p>
+            <p>For product work, I would translate those into three questions. Did you have to make a decision? Did you understand the customer&rsquo;s situation and how the system worked? Did someone help you examine your reasoning?</p>
+            <p>When we bring AI into the work, we still need people making decisions, understanding the customer, and discussing their reasoning with someone more experienced.</p>
+            <p>In engineering, that learning often happens in ordinary work.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-10">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-10.webp" alt="Slide 10. HOW PRODUCT JUDGMENT DEVELOPS. THE SMALL REPS ADD UP. A first draft exposes assumptions. A support ticket reveals context. A senior challenges the reasoning. REVIEW  /  onboarding.ts. 12   if (profile.isIncomplete) {. 13     return redirect(&quot;/setup&quot;);. 14   }. REVIEWER. Wait. Why would a user do that?. Illustrative review." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-10"><span class="deck-slide-num">10</span>The small reps add up</a></h3>
+            <p>Think about a newer engineer and an experienced colleague investigating a confusing support ticket together. They work out what the customer expected, figure out what happened, and discuss what to change. The newer engineer gets to make a first attempt and hear what their colleague notices.</p>
+            <p>Now imagine the senior engineer using AI to investigate and implement the fix alone. The work might be excellent. But the newer engineer never gets that experience.</p>
+            <p>Nobody decided to stop teaching. The work just stopped requiring that conversation.</p>
+            <p>So we have to make it happen on purpose. Ask the newer engineer to recommend a fix. Then talk through what they considered and what they might have missed.</p>
+            <p>That practice matters even more as AI makes building easier and leaves us with more choices about what to build.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="choosing" aria-labelledby="choosing-h">
+      <h2 class="deck-chapter-title" id="choosing-h">Choosing what to build</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-11">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-11.webp" alt="Slide 11. THE PRODUCT CONSEQUENCE. CHOOSING DESERVES MORE ATTENTION. As implementation gets easier, deciding what matters becomes more valuable." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-11"><span class="deck-slide-num">11</span>Choosing deserves more attention</a></h3>
+            <p>When AI helps us build faster, we get to try more ideas. We still have to choose which ones deserve the effort.</p>
+            <p>That makes product judgment more important. We need to understand which problems matter to customers and which ideas are worth testing.</p>
+            <p>Shipping more features doesn&rsquo;t guarantee we have solved the customer&rsquo;s biggest problem.</p>
+            <p>Building a feature might be easy. Using the product afterward might be harder.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-12">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-12.webp" alt="Slide 12. THE COST OF ADDING MORE. MORE FEATURES CAN ADD MORE FRICTION. FOUR DECISIONS BEFORE STARTING. Create your workspace. Workspace name. Team size. Your role. Preferred workflow. Continue. ONE STEP TO GET STARTED. Create your workspace. Workspace name. Invite your team when you’re ready. Continue. Start with the customer&#x27;s obstacle. Ask only what the next step needs. Illustrative onboarding screens." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-12"><span class="deck-slide-num">12</span>More features can add more friction</a></h3>
+            <p>A feature might take an afternoon to build. Customers still have to notice it, understand it, and decide when to use it.</p>
+            <p>Every extra choice asks the new user to make another decision. Every new setting gives them something else to figure out.</p>
+            <p>If the customer&rsquo;s problem is getting started, adding more options can make that problem worse.</p>
+            <p>We need to find where they&rsquo;re stuck and what would help them move forward. That gives us something specific to test, and a reason to build it.</p>
+            <p>At Webflow, understanding what new users were struggling with led us toward one specific thing worth building.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-13">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-13.webp" alt="Slide 13. QUICK STACK. WEBFLOW: THE BLOCKER WAS LAYOUT. Four weeks of diary research. Funnel analysis located the drop-off. Activation rose 5% relative after launch. Quick Stack UI • Source: Webflow." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-13"><span class="deck-slide-num">13</span>Webflow: the blocker was layout</a></h3>
+            <p>At Webflow, my team&rsquo;s goal was to reduce the learning curve.</p>
+            <p>We used a four-week diary study and funnel analysis to understand where new users struggled. Creating layouts stood out. The research found that only one in ten could create even a basic layout.</p>
+            <p>We developed what became Quick Stack, a simpler layout building block. We asked participants to build five layouts. With the existing builder, none of the twenty-five participants finished all five. With the prototype, ten of the nineteen participants finished all five.</p>
+            <p>These were small tests with different participants, but they gave us enough evidence to keep going. After release, we saw a five percent relative increase in overall activation. The research helped us choose where to put our effort. Once we had chosen Quick Stack, engineers still had to make all the decisions that turned that idea into something people would use.</p>
+            <p>That&rsquo;s where product judgment shows up every day.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-14">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-14.webp" alt="Slide 14. WHY THIS IS PRODUCT STRATEGY. PRODUCT OUTCOMES DEPEND ON SMALL CALLS. An onboarding step asks for effort. A default makes an assumption. A feature adds something to learn. THOUSANDS OF DECISIONS. Too many for one leader to review." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-14"><span class="deck-slide-num">14</span>Product outcomes depend on small calls</a></h3>
+            <p>An engineer rarely gets a ticket that answers every question.</p>
+            <p>They still have to decide what happens when a user skips a step, which setting should be the default, or whether another option will help someone.</p>
+            <p>Those choices shape the customer&rsquo;s experience. A manager won&rsquo;t be in the room for most of them.</p>
+            <p>We need engineers who understand the problem well enough to make those calls, and we need to give them practice doing it.</p>
+            <p>If the experienced people keep making the decisions while everyone else implements them, the team might keep delivering. But we&rsquo;re relying on the judgment we already have, without developing it in more people.</p>
+            <p>That&rsquo;s the risk I want us to pay attention to.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-15">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-15.webp" alt="Slide 15. THE CONCLUSION. Delivery can improve while opportunities. to develop product judgment shrink." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-15"><span class="deck-slide-num">15</span>Delivery can improve while judgment shrinks</a></h3>
+            <p>Delivery can improve while opportunities to develop product judgment shrink.</p>
+            <p>That&rsquo;s why we need to look beneath the score. A team keeps shipping, but fewer engineers get to weigh the options, hear from customers, or see what happened after launch.</p>
+            <p>Those are the experiences that help someone make a better call next time. If AI changes who does that work, we need to think about where those experiences will come from.</p>
+            <p>Use some of the time AI saves to give engineers more room to explore an idea, test their reasoning, and learn with someone more experienced.</p>
+            <p>Here are four ways to make that part of the work.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="four-practices" aria-labelledby="four-practices-h">
+      <h2 class="deck-chapter-title" id="four-practices-h">Four practices</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-16">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-16.webp" alt="Slide 16. A STANDARD FOR AI-NATIVE TEAMS. CHALLENGE. Stretch on purpose. Leave a real decision with the learner. COMPLEXITY. Keep the whole problem visible. Connect the ticket to the customer outcome. CONNECTION. Protect connection. Make expert reasoning available. SHARED LEARNING. Make learning visible. Give useful practices time and support." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-16"><span class="deck-slide-num">16</span>A standard for AI-native teams</a></h3>
+            <p>The first three practices give engineers the challenge, complexity, and connection we talked about earlier. The fourth is about making that learning a regular part of the team’s work.</p>
+            <p>Let me show you what this looked like at Figma, starting with how we chose our first AI features.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-17">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-17.webp" alt="Slide 17. 01 / CHALLENGE. STRETCH ON PURPOSE. Set a decision within reach. Use AI to explore alternatives. Ask for reasoning and tradeoffs." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-17"><span class="deck-slide-num">17</span>Practice 1: Stretch on purpose</a></h3>
+            <p>At Figma, our Editor AI team worked on features that helped designers get through repetitive work faster. The clip shows examples like replacing placeholder content and renaming layers. The goal was productivity. But deciding which features to build also gave our engineers practice making product decisions.</p>
+            <p>When we were choosing those first features, we got together in person and brainstormed potential ideas. Then we let the engineers choose which ideas they wanted to build proofs of concept for. That gave them a decision they could get their arms around. They had to weigh what was useful, what was feasible, and how quickly we could build it. They presented their prototypes, and we decided together which ones should go into production.</p>
+            <p>The important part was that engineers made the first recommendation. AI could help them explore alternatives or test an assumption, but they still had to choose an approach and explain why. Give them room to make that call before you offer your own.</p>
+            <p>But choosing a feature was only the beginning.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-18">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-18.webp" alt="Slide 18. 02 / COMPLEXITY. KEEP THE WHOLE PROBLEM VISIBLE. Hear the customer’s problem. Carry the decision into delivery. Return to the result after launch. CUSTOMER. PROBLEM. PRODUCT. DECISION. IMPLEMENTATION. OUTCOME. Return to what customers need." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-18"><span class="deck-slide-num">18</span>Practice 2: Keep the whole problem visible</a></h3>
+            <p>Each engineer then owned a feature through development. A few weeks after launch, they came back to the team and presented what we had learned about usability and adoption.</p>
+            <p>They saw how customers actually used what they built. We used those findings to make changes or expand features that were getting strong adoption.</p>
+            <p>For your team, start that ownership with the customer&rsquo;s problem and keep it going after launch. Engineers need to see what happened because of their decisions.</p>
+            <p>Use AI to summarize the feedback, but give engineers time to read customer comments or watch a usability session themselves. That is where they connect the summary to someone&rsquo;s actual experience.</p>
+            <p>Seeing what happened is part of the learning. Talking it through with someone more experienced helps you notice things you missed.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-19">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-19.webp" alt="Slide 19. 03 / CONNECTION. PROTECT CONNECTION. Pair on a consequential decision. Explain reasoning in design reviews. Include engineers in customer calls. DESIGN REVIEW  /  next action. REVIEWER. Change this. A DIRECTION. REVIEWER. What do you expect the user to do next?. A CONVERSATION. One real decision. Time to think together." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-19"><span class="deck-slide-num">19</span>Practice 3: Protect connection</a></h3>
+            <p>At Figma, getting together in person gave us time to work through ideas. Engineers presented their thinking, heard questions from the team, and helped decide what we would build. The value was in staying with a question long enough to understand each other&rsquo;s reasoning.</p>
+            <p>In a design review, ask the engineer what they see and what they recommend first. Then explain what you noticed and why it matters.</p>
+            <p>AI is useful for getting another perspective. However, a colleague also knows the customer, the history of the product, and the consequences the team will have to live with. And they&rsquo;re there after launch to help you understand what happened.</p>
+            <p>Being together in person gave us room for that back-and-forth. Remote teams need time for it too.</p>
+            <p>Once you find a way of learning that works, make room for it regularly.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-20">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-20.webp" alt="Slide 20. 04 / SHARED LEARNING. MAKE LEARNING VISIBLE. Ask how people actually learn. Give useful practices work time. Review AI-assisted decisions openly. FIGMA MAKER WEEK. Time to explore and learn together. Figma Blog, 2021." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-20"><span class="deck-slide-num">20</span>Practice 4: Make learning visible</a></h3>
+            <p>After those launches, we made in-person brainstorms and hackathons a more regular practice. They had helped us build useful features and learn from each other.</p>
+            <p>Maker Week is a broader example from Figma of setting aside time to explore and learn together.</p>
+            <p>Give the ways people already learn from each other a regular place in the workday. A useful conversation should not depend on someone finding spare time.</p>
+            <p>One place to start is a short review of a decision made with AI: what did the tool suggest, what did we choose, and what did we learn?</p>
+            <p>Include good calls as well as mistakes.</p>
+            <p>That makes one person&rsquo;s experience useful to the rest of the team.</p>
+            <p>These practices are worth thinking about before we automate the next task. That decision changes both how the work gets done and what someone learns by doing it.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="deck-chapter" id="closing" aria-labelledby="closing-h">
+      <h2 class="deck-chapter-title" id="closing-h">Putting it into practice</h2>
+      <div class="deck-slides">
+        <article class="deck-slide" id="slide-21">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-21.webp" alt="Slide 21. THE THIRD QUESTION. What does automating this. take away from someone’s growth?. If useful practice disappears, give it a deliberate replacement." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-21"><span class="deck-slide-num">21</span>What does automating this take away from someone&#x27;s growth?</a></h3>
+            <p>When we make that decision, we already ask two questions: what should we automate, and where do we still need human involvement?</p>
+            <p>Here&rsquo;s a third: what does automating this take away from someone&rsquo;s growth?</p>
+            <p>Some tasks offer very little learning. Automating them gives people time for more useful work.</p>
+            <p>Other tasks give someone practice investigating a customer&rsquo;s problem or choosing between possible solutions. If AI takes over that task, decide where the person will get that practice instead.</p>
+            <p>Keep the time savings, and make sure there&rsquo;s still something for the person to work out.</p>
+            <p>Then check whether they&rsquo;re actually learning from it.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-22">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-22.webp" alt="Slide 22. SIGNALS TO TRY. THE SCORE AND WHAT’S UNDERNEATH. THE SCORE. WHAT’S UNDERNEATH. Features shipped. Who understood the customer problem?. Delivery speed. Who can explain the choices and tradeoffs?. Experiments run. What did we learn, and what changed?. AI-assisted pull requests. Who can explain and check the result?." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-22"><span class="deck-slide-num">22</span>The score and what&#x27;s underneath</a></h3>
+            <p>Keep tracking delivery. Alongside it, look for evidence that people are still developing product judgment.</p>
+            <p>That might be an engineer spotting an assumption they would previously have missed, explaining a tradeoff more clearly, or changing their recommendation after hearing from a customer.</p>
+            <p>Those are signs of learning that a delivery metric won&rsquo;t show you.</p>
+            <p>You don&rsquo;t need a new team-wide process to start looking for this. Use a piece of work that&rsquo;s already happening.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-23">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-23.webp" alt="Slide 23. PUTTING THE STANDARD INTO PRACTICE. ONE WEEK TO START. Choose one AI-assisted workflow. Give one engineer a real decision. Review the reasoning and outcome. MONDAY. Choose the rep. DURING THE WEEK. Pair on the decision. FRIDAY. Review what changed." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-23"><span class="deck-slide-num">23</span>One week to start</a></h3>
+            <p>On Monday, choose one task where your team uses AI and give an engineer a real decision to own.</p>
+            <p>During the week, make time for them to work through it with an experienced colleague.</p>
+            <p>On Friday, review the decision together and agree on any follow-up after launch.</p>
+            <p>That&rsquo;s a concrete way to put Walsh&rsquo;s idea into practice: pay attention to how the work happens, as well as what gets delivered.</p>
+          </div>
+        </article>
+        <article class="deck-slide" id="slide-24">
+          <figure class="deck-slide-img">
+            <img src="/assets/img/talks/the-score-takes-care-of-itself/slide-24.webp" alt="Slide 24. THE SCORE TAKES CARE OF ITSELF. THE STANDARD IS OUR RESPONSIBILITY. Keep the delivery gains. Make room for the reps. LET&#x27;S CONNECT. linkedin.com/in/marvinguerra." width="1280" height="720" loading="lazy" decoding="async">
+          </figure>
+          <div class="deck-notes">
+            <h3 class="deck-slide-title"><a href="#slide-24"><span class="deck-slide-num">24</span>The standard is our responsibility</a></h3>
+            <p>I would love to hear how your team is approaching this. Connect with me on LinkedIn so we can keep talking.</p>
+            <p>Walsh told us The Score Takes Care of Itself. The standard was still his responsibility.</p>
+            <p>Delivery can improve while opportunities to develop product judgment shrink. Our job is to notice that and change how the work happens.</p>
+            <p>Keep the delivery gains. Make sure the next generation of engineers gets to build the judgment behind them.</p>
+            <p>That is our standard to set.</p>
+            <p>Thank you.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="deck-cta">
+    <div class="deck-cta-inner">
+      <h2 class="deck-cta-title">Want this talk at <em>your event?</em></h2>
+      <p>I speak on engineering leadership, AI adoption, and product judgment. Happy to tailor this one for your audience.</p>
+      <a class="btn-submit deck-cta-btn" href="/?looking=Speaking%20Engagement#contact">Get in touch →</a>
+    </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 Marvin Guerra</span>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/marvinguerra/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/SenorLlama" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.instagram.com/senorllama/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://goodreads.com/senorllama" target="_blank" rel="noopener">Goodreads</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="/assets/js/talk.js" defer></script>
+  <script data-goatcounter="https://marvinguerra.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
