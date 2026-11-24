@@ -3,220 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Lost Llama</title>
+  <title>Page not found | Marvin Guerra</title>
+  <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/llama-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
   <style>
-    :root {
-      --primary: #af101a;
-      --secondary: #885200;
-      --secondary-container: #ffddb5;
-      --surface: #f9f9f6;
-      --surface-container-low: #f4f3ef;
-      --surface-container: #eeede9;
-      --on-surface: #1a1c1b;
-      --outline: #74777f;
-      --serif: 'Noto Serif', Georgia, serif;
-      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: var(--sans);
-      background: var(--surface-container-low);
-      color: var(--on-surface);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .lost-strip {
+      height: 24px;
+      background-image: var(--tocapu-ink);
+      opacity: 0.85;
+    }
+    .lost {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 24px;
-    }
-    .gif-container {
-      width: 280px;
-      height: 280px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: var(--surface-container);
-      margin-bottom: 36px;
+      padding: 48px 16px 64px;
       position: relative;
-      box-shadow: 0 8px 40px rgba(26, 28, 27, 0.06);
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.2s both;
+      overflow: hidden;
     }
-    .gif-container img {
+    .lost-spiral {
+      position: absolute;
+      width: 360px;
+      right: -90px;
+      top: 40px;
+      color: var(--clay);
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .lost-art {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      border-radius: 6px;
+      border: 1px solid var(--hairline-12);
+      background: var(--card);
+      box-shadow: 10px 10px 0 var(--ochre);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .lost-art img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: none;
-    }
-    .gif-container img.active {
-      display: block;
-    }
-    .error-code {
-      font-family: var(--serif);
-      font-size: 7rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      color: var(--primary);
       opacity: 0;
-      animation: fadeUp 0.8s ease 0.4s both;
+      transition: opacity 0.5s ease;
     }
-    .error-code span {
-      color: var(--secondary);
+    .lost-art img.active { opacity: 1; }
+    .lost-art .lost-fallback {
+      object-fit: contain;
+      padding: 40px;
     }
-    .error-line {
-      width: 56px;
-      height: 4px;
-      background: var(--secondary);
-      border-radius: 2px;
-      margin: 24px auto;
-      animation: lineExpand 0.6s ease 0.8s both;
-    }
-    .error-title {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 600;
-      font-style: italic;
-      margin-bottom: 12px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 1s both;
-    }
-    .error-message {
-      font-size: 0.95rem;
-      color: var(--outline);
-      max-width: 420px;
-      line-height: 1.7;
-      margin-bottom: 40px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 1.2s both;
-    }
-    .error-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--on-surface);
-      text-decoration: none;
-      padding: 16px 40px;
-      border-radius: 0.75rem;
-      background: var(--secondary-container);
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 1.4s both;
-    }
-    .error-home:hover {
-      background: #f5c97a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(136, 82, 0, 0.15);
-    }
-    .error-home svg {
-      width: 18px;
-      height: 18px;
-    }
-    .dots {
+    .lost-dots {
       display: flex;
-      gap: 8px;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease 1.6s both;
+      gap: 6px;
+      margin: 18px 0 28px;
     }
-    .dots button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: none;
-      background: var(--surface-container);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+    .lost-dots button {
+      width: 8px;
+      height: 8px;
       padding: 0;
+      border-radius: 50%;
+      border: 1px solid var(--muted);
+      background: transparent;
+      cursor: pointer;
     }
-    .dots button.active {
-      background: var(--secondary);
-      transform: scale(1.2);
+    .lost-dots button.active { background: var(--clay); border-color: var(--clay); }
+    .lost-code {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(4.5rem, 14vw, 7.5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin: 0;
     }
-    .dots button:hover {
-      background: var(--secondary);
+    .lost-code em { color: var(--clay); font-style: italic; }
+    .lost-kicker {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 18px 0 10px;
     }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .lost-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 400;
+      margin: 0 0 12px;
     }
-    @keyframes lineExpand {
-      from { width: 0; opacity: 0; }
-      to { width: 56px; opacity: 1; }
+    .lost-message {
+      max-width: 440px;
+      color: var(--muted-2);
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 0 32px;
     }
+    .lost-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      align-items: center;
+    }
+    .lost-home {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: 100px;
+      padding: 14px 30px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      transition: background 0.15s;
+    }
+    .lost-home:hover { background: var(--clay); }
+    .lost-link {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--ink-80);
+      text-decoration: none;
+      border-bottom: 1px solid var(--hairline-12);
+      padding-bottom: 2px;
+    }
+    .lost-link:hover { color: var(--clay); border-bottom-color: var(--clay); }
     @media (max-width: 640px) {
-      .gif-container { width: 220px; height: 220px; }
-      .error-code { font-size: 5rem; }
-      .error-title { font-size: 1.4rem; }
+      .lost-art { width: 210px; height: 210px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lost-art img { transition: none; }
     }
   </style>
 </head>
 <body>
-  <div class="gif-container" id="gifContainer">
-    <img src="https://media1.tenor.com/m/Qr0iBlPVDgUAAAAd/emperors-new-groove-kuzco.gif" alt="Sad llama in the rain" class="active">
-    <img src="https://media1.tenor.com/m/4H3sSEendXsAAAAd/yes-llama.gif" alt="Whining llama">
-    <img src="https://media1.tenor.com/m/_mYFry21FRYAAAAd/angry.gif" alt="Angry llama">
-    <img src="https://media1.tenor.com/m/9j6fuQEjwZcAAAAC/thaonema-llama.gif" alt="Crying llama">
-  </div>
+  <div class="lost-strip" aria-hidden="true"></div>
 
-  <div class="dots" id="dots">
-    <button class="active" data-index="0" aria-label="GIF 1"></button>
-    <button data-index="1" aria-label="GIF 2"></button>
-    <button data-index="2" aria-label="GIF 3"></button>
-    <button data-index="3" aria-label="GIF 4"></button>
-  </div>
+  <main class="lost">
+    <svg class="lost-spiral" viewBox="-28 -28 56 54" aria-hidden="true">
+      <path d="M0 0 a4 4 0 0 1 8 0 a8 8 0 0 1 -16 0 a12 12 0 0 1 24 0 a16 16 0 0 1 -32 0 a20 20 0 0 1 40 0 a24 24 0 0 1 -48 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
 
-  <h1 class="error-code">4<span>0</span>4</h1>
-  <div class="error-line"></div>
-  <p class="error-title">This llama has lost its way</p>
-  <p class="error-message">Looks like you wandered off the trail. Even the best llamas take a wrong turn sometimes. Let's get you back to familiar pastures.</p>
+    <!-- GIFs come from Tenor's embed links (the licensed way to show them).
+         If Tenor is down or blocks them, the site's own llama shows instead. -->
+    <div class="lost-art" id="lost-art">
+      <img class="lost-fallback" src="/assets/img/llama-avatar.png" alt="Marvin's llama mascot">
+      <img class="lost-gif" src="https://media1.tenor.com/m/Qr0iBlPVDgUAAAAd/emperors-new-groove-kuzco.gif" alt="Sad llama in the rain">
+      <img class="lost-gif" src="https://media1.tenor.com/m/4H3sSEendXsAAAAd/yes-llama.gif" alt="Whining llama">
+      <img class="lost-gif" src="https://media1.tenor.com/m/_mYFry21FRYAAAAd/angry.gif" alt="Angry llama">
+      <img class="lost-gif" src="https://media1.tenor.com/m/9j6fuQEjwZcAAAAC/thaonema-llama.gif" alt="Crying llama">
+    </div>
+    <div class="lost-dots" id="lost-dots" role="group" aria-label="Choose a llama" hidden></div>
 
-  <a href="/" class="error-home">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    Take Me Home
-  </a>
+    <h1 class="lost-code">4<em>0</em>4</h1>
+    <p class="lost-kicker">Page not found</p>
+    <p class="lost-title">This llama has lost its way</p>
+    <p class="lost-message">Looks like you wandered off the trail. Even the best llamas take a wrong turn sometimes. Let's get you back to familiar pastures.</p>
+
+    <div class="lost-actions">
+      <a href="/" class="lost-home">Take me home →</a>
+      <a href="/#speaking" class="lost-link">Speaking</a>
+      <a href="/#contact" class="lost-link">Get in touch</a>
+    </div>
+  </main>
 
   <script>
-    (function() {
-      const gifs = document.querySelectorAll('#gifContainer img');
-      const dots = document.querySelectorAll('#dots button');
+    (function () {
+      const fallback = document.querySelector('.lost-fallback');
+      const dotsWrap = document.getElementById('lost-dots');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let gifs = [];
       let current = 0;
-      let interval;
+      let timer = null;
 
-      function show(index) {
-        gifs.forEach(g => g.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
-        gifs[index].classList.add('active');
-        dots[index].classList.add('active');
-        current = index;
-      }
-
-      function next() {
-        show((current + 1) % gifs.length);
-      }
-
-      function startRotation() {
-        interval = setInterval(next, 4000);
-      }
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          clearInterval(interval);
-          show(parseInt(dot.dataset.index));
-          startRotation();
+      function show(i) {
+        gifs.forEach((g, n) => g.classList.toggle('active', n === i));
+        dotsWrap.querySelectorAll('button').forEach((d, n) => {
+          d.classList.toggle('active', n === i);
+          d.setAttribute('aria-pressed', n === i ? 'true' : 'false');
         });
-      });
+        current = i;
+      }
 
-      startRotation();
+      function start() {
+        clearInterval(timer);
+        if (!reduceMotion && gifs.length > 1) {
+          timer = setInterval(() => show((current + 1) % gifs.length), 4000);
+        }
+      }
+
+      function render() {
+        dotsWrap.innerHTML = '';
+        if (!gifs.length) {
+          fallback.classList.add('active');
+          dotsWrap.hidden = true;
+          clearInterval(timer);
+          return;
+        }
+        fallback.classList.remove('active');
+        gifs.forEach((g, n) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', g.alt);
+          b.addEventListener('click', () => { show(n); start(); });
+          dotsWrap.appendChild(b);
+        });
+        dotsWrap.hidden = gifs.length < 2;
+        show(Math.min(current, gifs.length - 1));
+        start();
+      }
+
+      // Keep only the GIFs that actually load; show the mascot until one does.
+      fallback.classList.add('active');
+      document.querySelectorAll('.lost-gif').forEach(img => {
+        const ok = () => {
+          if (!gifs.includes(img)) {
+            gifs = Array.from(document.querySelectorAll('.lost-gif')).filter(g => g === img || gifs.includes(g));
+            render();
+          }
+        };
+        const bad = () => { img.remove(); gifs = gifs.filter(g => g !== img); render(); };
+        if (img.complete) { img.naturalWidth ? ok() : bad(); }
+        else { img.addEventListener('load', ok); img.addEventListener('error', bad); }
+      });
     })();
   </script>
   <!-- GoatCounter: cookieless visit stats, dashboard at marvinguerra.goatcounter.com -->
