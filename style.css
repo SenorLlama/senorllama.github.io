@@ -1023,6 +1023,22 @@ textarea:focus-visible {
 }
 .btn-submit:hover { background: var(--clay-hover); }
 
+.field-trap {
+  position: absolute;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.btn-submit:disabled { opacity: 0.7; cursor: progress; }
+.form-error {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--jade-cream);
+}
+.form-error a { color: inherit; }
 .thank-you {
   background: rgba(236,228,214,0.06);
   border: 1px solid rgba(217,154,78,0.4);
