@@ -105,7 +105,8 @@ textarea:focus-visible {
 }
 
 /* Scroll reveal (IntersectionObserver toggles .in-view) */
-.reveal { opacity: 0; transform: translateY(28px); }
+/* Hidden only when JS runs, so content still shows if scripts fail */
+.js .reveal { opacity: 0; transform: translateY(28px); }
 .reveal.in-view { animation: fadeUp 0.7s ease both; }
 
 /* ---------- Nav ---------- */
@@ -196,6 +197,7 @@ textarea:focus-visible {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
+  overflow-x: clip;
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 84px var(--pad) 64px;
@@ -618,7 +620,8 @@ textarea:focus-visible {
 }
 .talk-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .talk-links a,
-.speaking-cta a {
+.speaker-kit-actions a,
+.speaker-kit-copy {
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -628,17 +631,83 @@ textarea:focus-visible {
   padding-bottom: 2px;
 }
 .talk-links a:hover,
-.speaking-cta a:hover { border-bottom-color: var(--clay); }
-.speaking-cta {
-  margin: 32px 0 0;
-  padding: 22px 28px;
+.speaker-kit-actions a:hover,
+.speaker-kit-copy:hover { border-bottom-color: var(--clay); }
+.talk-list-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+/* Speaker kit for event organizers */
+.speaker-kit {
+  margin: 40px 0 0;
+  padding: 30px 32px;
   background: var(--surface-2);
   border-radius: 6px;
-  font-size: 15px;
-  line-height: 1.6;
   color: var(--ink-60);
 }
-.speaking-cta a { margin-left: 4px; white-space: nowrap; }
+.speaker-kit-head p { margin: 0 0 22px; font-size: 15px; line-height: 1.6; }
+.speaker-kit-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+.speaker-kit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 32px;
+}
+.speaker-kit-label {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.speaker-kit-topics {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.speaker-kit-topics li { margin-bottom: 6px; }
+.speaker-kit-topics li::marker { color: var(--clay); }
+.speaker-kit-bio {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.speaker-kit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 26px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline-12);
+}
+.speaker-kit-actions a { white-space: nowrap; }
+.speaker-kit-copy {
+  background: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 0 0 2px;
+  cursor: pointer;
+}
+
+/* "More about me" only appears on small screens */
+.hero-more-toggle { display: none; }
 
 /* ---------- Reading (Goodreads shelf) ---------- */
 /* Selectors are scoped under .reading-shelf so they win over the styles
@@ -1048,6 +1117,35 @@ textarea:focus-visible {
   .nav-toggle { display: flex; }
 
   .hero { padding-top: 56px; }
+
+  /* Phones: show the photo right under the name and fold the longer bio */
+  .hero-layout { gap: 0; }
+  .hero-text { display: contents; }
+  .hero-text > .eyebrow { order: 0; }
+  .hero-name { order: 1; }
+  .hero-photo { order: 2; width: min(300px, 78%); margin: 4px 0 44px; }
+  .hero-text > .hero-lead,
+  .hero-more-toggle,
+  .hero-more,
+  .hero-social { order: 3; }
+  .js .hero-more:not(.open) { display: none; }
+  .js .hero-more-toggle {
+    display: inline-block;
+    justify-self: start;
+    margin: 0 0 26px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid rgba(181,70,47,0.35);
+    padding: 0 0 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--clay);
+    cursor: pointer;
+  }
+  .hero-more.open { margin-bottom: 8px; }
+  .hero-social { margin-top: 8px; }
+  .speaker-kit-grid { grid-template-columns: 1fr; gap: 24px; }
   .job {
     grid-template-columns: 28% 1fr;
     gap: 20px;
@@ -1063,7 +1161,7 @@ textarea:focus-visible {
   .section-title { font-size: 36px; }
   .talk { grid-template-columns: 1fr; gap: 18px; padding: 26px 0; }
   .talk-art { width: 140px; }
-  .speaking-cta { padding: 18px 20px; }
+  .speaker-kit { padding: 24px 20px; }
   .reading-shelf .gr_custom_container_1795114824 { padding: 4px 16px 16px; }
   .reading-shelf .gr_custom_each_container_1795114824 {
     grid-template-columns: 52px 1fr;
